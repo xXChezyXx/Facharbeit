@@ -353,7 +353,44 @@ Damit die Ki mit der Matrix lernen kann, muss diese Matrix in einen Vektor umgew
 
 \section{Schlussfolgerung}
 - Seite 19
-Paar Formeln, wobei gilt: \\
+Paar Formeln, wobei gilt:
+Linare Funktion zwischen zwei Neuronenschichten:
+\[ \vec{x}^{(\alpha)}=f^{(\alpha)}(W^{(\alpha)} \vec{x}^{(\alpha-1)} + \vec{b}^{(\alpha)}) \]
+RelU:
+\[ x_i^{(\alpha)} := f^{(\alpha)}(x_i^{'(\alpha)}) \]
+\[ x_i^{(\alpha)}= \left\{
+	\begin{array}{ll}
+		x_i^{'(\alpha)}  & \mbox{falls } x_i^{'(\alpha)} > 0 \\
+		0 & \mbox{falls } x_i^{'(\alpha)} \leq 0
+	\end{array}
+\right. \]
+Ableitung von RelU:
+\[ \frac{\partial x_i^{(\alpha)}}{\partial x_i^{'(\alpha)}} = \left\{
+	\begin{array}{ll}
+		1  & \mbox{falls } x_i^{'(\alpha)} > 0 \\
+		0 & \mbox{falls } x_i^{'(\alpha)} \leq 0
+	\end{array}
+\right. \]
+Softmax:
+\[ x_i^{(\alpha)} = \frac{e^{x_i^{'(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{x_i^{'(\alpha)}}} \]
+Ableitung von Softmax:
+\[ \frac{\partial x_i^{(\alpha)}}{\partial x_k^{'(\alpha)}} = \left\{
+	\begin{array}{ll}
+		x_i^{(\alpha)}(1-x_k^{(\alpha)})  & \mbox{falls } i = k \\
+		-x_i^{(\alpha)}x_k^{(\alpha)} & \mbox{falls } i \neq k
+	\end{array}
+\right. \]
+Cross Entropy:
+\[ C(\vec{y},\vec{x}^{(A)}) = -\sum_{i=1}^{N_A} y_i * ln(x_i^{(A)}) \]
+Ableitung von Cross Entropy:
+\[ \frac{\partial C}{\partial x_i^{(A)}} = -\frac{y_i}{x_i^{(A)}} \]
+Backpropagation Bias FNN:
+\[ \frac{\partial C}{\partial b_i^{(\alpha)}} = \frac{\partial C}{\partial x_i^{'(\alpha)}} \]
+Backpropagation Weight FNN:
+\[ \frac{\partial C}{\partial w_{i,j}^{(\alpha)}} = \frac{\partial C}{\partial x_i^{'(\alpha)}} x_j^{(\alpha-1)} \]
+Backpropagation Error FNN:
+\[ \frac{\partial C}{\partial x_{j}^{(\alpha-1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial x_i^{'(\alpha)}} w_{i,j}^{(\alpha)} \]
+
 
 \newpage
 \nolinenumbers{}

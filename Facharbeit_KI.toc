@@ -24,6 +24,6 @@
 \contentsline {subsubsection}{\numberline {7.3.2}Validationsdaten}{10}{subsubsection.7.3.2}%
 \contentsline {subsubsection}{\numberline {7.3.3}Testdaten}{10}{subsubsection.7.3.3}%
 \contentsline {section}{\numberline {8}Schlussfolgerung}{10}{section.8}%
-\contentsline {section}{\numberline {9}Literaturverzeichnis}{11}{section.9}%
-\contentsline {section}{\numberline {10}Schülererklärung}{12}{section.10}%
-\contentsline {section}{\numberline {11}Zusatz: ChatGPT}{12}{section.11}%
+\contentsline {section}{\numberline {9}Literaturverzeichnis}{12}{section.9}%
+\contentsline {section}{\numberline {10}Schülererklärung}{13}{section.10}%
+\contentsline {section}{\numberline {11}Zusatz: ChatGPT}{13}{section.11}%
