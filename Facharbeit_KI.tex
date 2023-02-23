@@ -29,6 +29,9 @@
 \usepackage[export]{adjustbox}
 \usepackage[nohyperlinks]{acronym}
 \usepackage[pagewise, modulo]{lineno}
+\usepackage[format=plain,
+            labelfont={bf,it},
+            textfont=it]{caption}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -227,24 +230,36 @@ der KI an, die dann am Ende des Netzwerkes eine Klasse ausgibt.
 In der Klassifikationsebene befindet sich das künstliches neuronales Netzwerk, die eine ähnliche Struktur wie bei Abbildung 4 hat.
 Diese Struktur nennt sich auch Fully Connected Neural Network und ist in mehreren Schichten aufgebaut. In Abbildung 4 wäre die Anzahl
 der Schichten $A = 6$. Die erste Schicht nennt sich Eingabeschicht, denn von dort kommen die Daten in die Neuronen rein, während bei
-der letzte Schicht die KI ein Ergebnis ausgibt. Diese Schicht heißt Ausgabeschicht. Die Schichten dazwischen werden ausgeblendete Schicht genannt.
+der letzte Schicht die KI ein Ergebnis ausgibt. Diese Schicht heißt Ausgabeschicht. Die Schichten dazwischen werden ausgeblendete Schichten genannt.
 Die ausgeblendete Schichten sind wichtige Teile des Netzwerkes, denn durch diese werden Merkmale gesucht und analysiert. Das gibt nochmal
 eine deutlich stärkere Lerntiefe für die KI.\@ Die einzelne Neuronen können einen Wert besitzen, sie wird als $ x_{i}^{(\alpha)} $ definiert,
 wobei $ \alpha \in \{1,\ldots,A\} $ gilt. Der Index $i$ beschreibt um welches Neuron in der Schicht $\alpha$ es sich handelt. Dieser Wert
 lässt sich aus den ganzen Verbindungen der vorherigen Schicht berechnen, indem sie wie in Abbildung 5 addiert werden. Dabei werden
-die einzelne Werte $ x_{i}^{(\alpha-1)} $ mit einem Gewicht $ w_{i,j}^{(\alpha)} $ multipliziert, womit $ j \in \{1,\ldots,N_{\alpha-1}\} $ gilt.
-$ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$. Allgemein gilt dann für die Berechnung
+die einzelne Werte $ x_{j}^{(\alpha-1)} $ mit einem Gewicht $ w_{i,j}^{(\alpha)} $ multipliziert, womit $ j \in \{1,\ldots,N_{\alpha-1}\} $ gilt.
+$ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=300pt, keepaspectratio]{images/verbindung}
+    \caption{Verbindungen zwischen den Neuronen.}
+\end{figure}
+Allgemein gilt dann für die Berechnung
 \begin{equation}
-    x_{i}^{'(\alpha)} := (\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
+    x_{i}^{'(\alpha)} := (\sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
 \end{equation}
 Das $ b_{i}^{(\alpha)} $ in der Gleichung steht für Bias und ist ein weiterer Parameter zum Einstellen wie das Gewicht. Beide spielen hier eine wichtige Rolle
 für das Weiterleiten der Neuronen. Das Gewicht entscheidet, wie wichtig der Wert vom Neuron ist. Je höher der Wert ist, desto entscheidener
 ist das Neuron. Der Bias stellt ein, wie leicht das Neuron sich aktiviert. Auch hier gilt, je größer der Wert, desto entscheidener ist das Neuron.
 Wichtig ist anzumerken, dass die Gewichte und die Biases verstellbare Parameter sind, die für das Lernen der KI eine wichtige Rolle
-spielt. Eine weitere Sache, die hinzugefügt werden muss ist die Aktivierungsfunktion, denn sie gibt das Netzwerk eine Komplexität.
+spielt. Eine weitere Sache, die hinzugefügt werden muss, ist die Aktivierungsfunktion, denn sie gibt das Netzwerk eine Komplexität.
 Ohne diese Komplexität wäre das Netzwerk linear, was Nachteile mit sich bringt für die KI. In Abbildung 6 ist die Regression bei einer
-nicht lineare Struktur deutlich besser als dies einer lineare Struktur. Welche Aktivierungsfunktionen verwendet werden kommt in Lektion AKTIVIERUNGSFUNKTION
-dran. So ergibt sich
+nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400pt, keepaspectratio]{images/regression}
+    \caption{In den ersten beiden Graphen sind die noch gut mit linearen Regressionen lösbar. Beim dritten Graph ist es
+    unmöglich eine genaue Regression zu bekommen mit der lineare Regression. Dafür wird eine nicht linieare Regression verwendet.}
+\end{figure}
+Welche Aktivierungsfunktionen verwendet werden kommt in Lektion AKTIVIERUNGSFUNKTION dran. So ergibt sich
 \begin{equation}
     x_{i}^{(\alpha)} := f^{(\alpha)}(x_{i}^{'(\alpha)}) = f^{(\alpha)}((\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)}).
 \end{equation}
@@ -253,6 +268,8 @@ in Abbildung 4 in einem Matrixblock umgeschrieben werden. So definiert sich
 \begin{equation}
     \vec{x}^{(\alpha)} := \begin{bmatrix}x_{1}^{(\alpha)} \\ x_{2    }^{(\alpha)} \\ \ldots \\ x_{N_{\alpha}}^{(\alpha)} \end{bmatrix}.
 \end{equation}
+Sobald die letzte Schicht erreicht ist, berechnet die Verlustfunktion Fehlermaße des Netzwerkes und gibt Aussage darüber, wie gut
+unsere KI ist. Mehr dazu im Kapitel VERLUSTFUNKTION.
 
 
 
@@ -279,7 +296,7 @@ $B^{(1)} = 1$. Für die nächsten Schichten gilt im Allgemeinen
     X^{(\alpha,\beta)} := (x_{ij}) \quad i \in \{1,\ldots,m_{x}^{(\alpha,\beta)}\}, j \in \{1,\ldots,n_{x}^{(\alpha,\beta)}\}.
 \end{equation}
 Die Werte $m_{x}^{(\alpha,\beta)}$ und $n_{x}^{(\alpha,\beta)}$ werden basiert auf die Operation berechnet, wobei
-$\alpha \in \{1,\ldots,A\}$ und $\beta \in \{1,\ldots,B^{(\alpha)}\}$. Dabei ist die Anzahl der Tiefe von der jeweilige Schicht abhängig.
+$\alpha \in \{1,\ldots,A\}$ und $\beta \in \{1^{(\alpha)},\ldots,B^{(\alpha)}\}$. Dabei ist die Anzahl der Tiefe von der jeweilige Schicht abhängig.
 
 
 \subsubsection{2D Konvolution}
