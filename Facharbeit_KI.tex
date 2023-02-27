@@ -40,7 +40,7 @@
 \renewcommand{\headrulewidth}{0pt}
 
 
-\usepackage{fontspec}
+\usepackage[no-math]{fontspec}
 \usepackage{float}
 \setmainfont{Arial}
 
@@ -113,7 +113,7 @@
 \rfoot{Seite \thepage}
 
 
-\section{Abbildungsverzeichnis}
+\section*{Abbildungsverzeichnis}
 - Seite 2 bis 3
 
 \newpage
@@ -377,15 +377,15 @@ RelU:
 \[ x_i^{(\alpha)} := f^{(\alpha)}(x_i^{'(\alpha)}) \]
 \[ x_i^{(\alpha)}= \left\{
 	\begin{array}{ll}
-		x_i^{'(\alpha)}  & \mbox{falls } x_i^{'(\alpha)} > 0 \\
-		0 & \mbox{falls } x_i^{'(\alpha)} \leq 0
+		x_i^{'(\alpha)}  & \mathrm{falls } x_i^{'(\alpha)} > 0 \\
+		0 & \mathrm{falls } x_i^{'(\alpha)} \leq 0
 	\end{array}
 \right. \]
 Ableitung von RelU:
 \[ \frac{\partial x_i^{(\alpha)}}{\partial x_i^{'(\alpha)}} = \left\{
 	\begin{array}{ll}
-		1  & \mbox{falls } x_i^{'(\alpha)} > 0 \\
-		0 & \mbox{falls } x_i^{'(\alpha)} \leq 0
+		1  & \mathrm{falls } x_i^{'(\alpha)} > 0 \\
+		0 & \mathrm{falls } x_i^{'(\alpha)} \leq 0
 	\end{array}
 \right. \]
 Softmax:
@@ -398,7 +398,7 @@ Ableitung von Softmax:
 	\end{array}
 \right. \]
 Cross Entropy:
-\[ C(\vec{y},\vec{x}^{(A)}) = -\sum_{i=1}^{N_A} y_i * ln(x_i^{(A)}) \]
+\[ C(\vec{y},\vec{x}^{(A)}) = -\sum_{i=1}^{N_A} y_i * \ln(x_i^{(A)}) \]
 Ableitung von Cross Entropy:
 \[ \frac{\partial C}{\partial x_i^{(A)}} = -\frac{y_i}{x_i^{(A)}} \]
 Backpropagation Bias FNN:
