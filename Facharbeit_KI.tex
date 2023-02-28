@@ -1,3 +1,9 @@
+% TODOLIST:
+% Abbildung für Nervenzelle aussuchen. Vielleicht nehme ich das vom Buch
+% Format später alles fixxen
+% Merkmale erklären
+% Davor Backpropagation erklären, damit ich überall die Ableitungen hinzufügen kann
+
 \documentclass[11pt]{article}
 \usepackage{geometry}
 \usepackage[onehalfspacing]{setspace}
@@ -6,16 +12,6 @@
 \usepackage{microtype}
 \usepackage{hyperref}
 \usepackage{xurl}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=blue,
-    bookmarksopen=true,
-    pdftitle={12g Seminarfacharbeit},
-    pdfpagemode=FullScreen,
-    }
-\geometry{a4paper}
-
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{chngcntr}
@@ -29,20 +25,26 @@
 \usepackage[export]{adjustbox}
 \usepackage[nohyperlinks]{acronym}
 \usepackage[pagewise, modulo]{lineno}
-\usepackage[format=plain,
-            labelfont={bf,it},
-            textfont=it]{caption}
-
+\usepackage[format=plain,labelfont={bf,it},textfont=it]{caption}
 \usepackage{fancyhdr}
+\usepackage[no-math]{fontspec}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    bookmarksopen=true,
+    pdftitle={12g Seminarfacharbeit},
+    pdfpagemode=FullScreen,
+    }
+\geometry{a4paper}
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancypagestyle{plain}{}
 \renewcommand{\headrulewidth}{0pt}
-
-
-\usepackage[no-math]{fontspec}
-\usepackage{float}
 \setmainfont{Arial}
+\newcommand*\mean[1]{\bar{#1}}
 
 \begin{document}
 \begin{titlepage}
@@ -119,7 +121,7 @@
 \newpage
 
 
-\section{Abkürzungsverzeichnis}
+\section*{Abkürzungsverzeichnis}
 
 \begin{acronym}
 \acro{KI}{Künstliche Intelligenz}
@@ -157,9 +159,9 @@ Solche starke KIs sind heutzutage noch nicht umsetzbar und es wird immer noch da
 Die schwache KI, die in der Facharbeit speziell zur Erkennung von handgeschriebenen Zahlen programmiert wird, können in 2 Teilbereichen
 unterteilt werden.
 \begin{figure}[h]
-\centering
-\includegraphics[width=300pt, keepaspectratio]{images/ki\_kategorie}
-\caption{Unterkategorien der Künstliche Intelligenz.}
+    \centering
+    \includegraphics[width=300pt, keepaspectratio]{images/ki\_kategorie}
+    \caption{Unterkategorien der Künstliche Intelligenz.}
 \end{figure}
 Eine Unterkategorie der KI wäre der Bereich Maschinelles Lernen. Maschinelles Lernen versucht mithilfe von Algorithmen mit einer großen Anzahl von
 Daten ein Muster zu erkennen. Dazu werden die aus Daten gewonnen Erkenntnisse für Problemlösung verwendet oder der Algorithmus wird auf
@@ -204,11 +206,20 @@ Der Datensatz ist gut zum Lernen, denn sie besitzt keine Fehlwerte oder verzerre
 Auflösung in Ordnung und 70000 Bilder sind für kleine Aufgaben angemessen.
 
 \subsection{Künstliches neuronales Netzwerk}
-Im menschlichen Gehirn befinden sich großen Mengen von Neuronen, die miteinander interagieren. Dabei werden elektrische Signale an einzelne Neuronen
-gesendet. Nun kann das einzelne Neuron entscheiden, ob sie dieses elektische Signal, was sie bekommen hat, weiterleitet zu den anderen Neuronen
-oder sie das Signal ignoriert. In der Informatik kann dies umgeschrieben werden, ob das Neuron eine 0 oder eine 1 sendet, wobei die 1 als weitergeleitet gilt.
+Im menschlichen Gehirn befinden sich großen Mengen von Neuronen, die miteinander interagieren. 
+Das Neuron besteht aus drei relevante Komponente. Der erste Komponent besteht aus Empfängern, die Signale von anderen verbundeten Neuronen empfängt.
+Sie werden auch Dendriten genannt. Ein weiterer Komponent wären die Synapsen. Die Aufgabe ist es sogenannte Neurotransmitter an anderen verbundenen Neuronen
+weiterzuleiten, falls das Signal ankommen sollte. Damit das Signal ankommt, braucht es den dritten Komponent, zwar den Axon. Sie wird als Leitungsbahn
+verwendet, um Signale transportieren zu können und besteht aus einer lange dünne Röhre. Diese Röhre kann das Signal zu den Synapsen weiterleiten, unter Voraussetzung, dass der Schwellenwert erreicht ist.
+Fall er nicht erreicht werden sollte, wird das Signal abgebrochen. Der Schwellenwert wird erreicht, wenn genug Neurotransmitter vorhanden sind
+WAS ABSOLUT EINFACH DARGSTELLT IST UND EIGENTLICH VERBESSERT WERDEN MUSS, ABER ICH FRAGE ZUR SICHERHEIT NOCHMAL NACH. Sobald das Signal ankommt, werden die Neurotransmitter ausgeschüttet und die Dendriten der anderen verbunden Neuronen nehmen sie auf.
+Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidung, ob das Signal weitergeleitet werden soll, aber abgebrochen wird.
+Es ensteht eine Kettenreaktion.
 Da das menschliche Gehirn imitiert werden soll, werden künstliche Neuronen erschaffen, die einen Wert von den vorherigen künstlichen Neuronen verarbeitet wurden.
-Durch die ganzen Verbindungen zwischen den Neuronen wird das auch als Netzwerk bezeichnet.
+Durch die ganzen Verbindungen zwischen den Neuronen wird das auch als Netzwerk bezeichnet. Viele Eigenschaften der Neuronen werden mitgenommen, wie zum Beispiel die Dendriten, die Synapsen, sowie
+der Schwellenwert, in der Informatik auch Bias genannt. Der Bias spielt in Kapitel FORWARD NETWORK eine Rolle. Unterschied ist aber,
+dass die künstlichen Neuronen deren Struktur nicht ändern können, dafür können denen aber Werte gegeben werden. Das bedeutet, dass das künstliche Neuron
+negative Werte annehmen kann, was bei den Neuronen nicht der Fall ist, da der Axon nur das Signal weiterleiten oder abbrechen kann. Sie können auch mit 0 und 1 bezeichnet werden.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/neural\_network}
@@ -231,7 +242,8 @@ In der Klassifikationsebene befindet sich das künstliches neuronales Netzwerk, 
 Diese Struktur nennt sich auch Fully Connected Neural Network und ist in mehreren Schichten aufgebaut. In Abbildung 4 wäre die Anzahl
 der Schichten $A = 6$. Die erste Schicht nennt sich Eingabeschicht, denn von dort kommen die Daten in die Neuronen rein, während bei
 der letzte Schicht die KI ein Ergebnis ausgibt. Diese Schicht heißt Ausgabeschicht. Die Schichten dazwischen werden ausgeblendete Schichten genannt.
-Die ausgeblendete Schichten sind wichtige Teile des Netzwerkes, denn durch diese werden Merkmale gesucht und analysiert. Das gibt nochmal
+Die ausgeblendete Schichten sind wichtige Teile des Netzwerkes, denn durch diese werden Merkmale gesucht und analysiert.
+Das Netzwerk läuft also von links nach rechts durch. Das gibt nochmal
 eine deutlich stärkere Lerntiefe für die KI.\@ Die einzelne Neuronen können einen Wert besitzen, sie wird als $ x_{i}^{(\alpha)} $ definiert,
 wobei $ \alpha \in \{1,\ldots,A\} $ gilt. Der Index $i$ beschreibt um welches Neuron in der Schicht $\alpha$ es sich handelt. Dieser Wert
 lässt sich aus den ganzen Verbindungen der vorherigen Schicht berechnen, indem sie wie in Abbildung 5 addiert werden. Dabei werden
@@ -244,7 +256,7 @@ $ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$.
 \end{figure}
 Allgemein gilt dann für die Berechnung
 \begin{equation}
-    x_{i}^{'(\alpha)} := (\sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
+    \bar{x}_{i}^{(\alpha)} := (\sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
 \end{equation}
 Das $ b_{i}^{(\alpha)} $ in der Gleichung steht für Bias und ist ein weiterer Parameter zum Einstellen wie das Gewicht. Beide spielen hier eine wichtige Rolle
 für das Weiterleiten der Neuronen. Das Gewicht entscheidet, wie wichtig der Wert vom Neuron ist. Je höher der Wert ist, desto entscheidener
@@ -255,28 +267,47 @@ Ohne diese Komplexität wäre das Netzwerk linear, was Nachteile mit sich bringt
 nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=400pt, keepaspectratio]{images/regression}
+    \includegraphics[width=300pt, keepaspectratio]{images/regression}
     \caption{In den ersten beiden Graphen sind die noch gut mit linearen Regressionen lösbar. Beim dritten Graph ist es
     unmöglich eine genaue Regression zu bekommen mit der lineare Regression. Dafür wird eine nicht linieare Regression verwendet.}
 \end{figure}
 Welche Aktivierungsfunktionen verwendet werden kommt in Lektion AKTIVIERUNGSFUNKTION dran. So ergibt sich
 \begin{equation}
-    x_{i}^{(\alpha)} := f^{(\alpha)}(x_{i}^{'(\alpha)}) = f^{(\alpha)}((\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)}).
+    x_{i}^{(\alpha)} := f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = f^{(\alpha)}((\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)}).
 \end{equation}
 Nun kann die Schicht auch als einen Vektor angesehen werden, wobei die Neuronen die Elemente vom Vektor sind. Folglich kann das Netzwerk
 in Abbildung 4 in einem Matrixblock umgeschrieben werden. So definiert sich
 \begin{equation}
-    \vec{x}^{(\alpha)} := \begin{bmatrix}x_{1}^{(\alpha)} \\ x_{2    }^{(\alpha)} \\ \ldots \\ x_{N_{\alpha}}^{(\alpha)} \end{bmatrix}.
+    \vec{x}^{(\alpha)} := \begin{bmatrix}x_{1}^{(\alpha)} \\ x_{2}^{(\alpha)} \\ \ldots \\ x_{N_{\alpha}}^{(\alpha)} \end{bmatrix}.
 \end{equation}
 Sobald die letzte Schicht erreicht ist, berechnet die Verlustfunktion Fehlermaße des Netzwerkes und gibt Aussage darüber, wie gut
 unsere KI ist. Mehr dazu im Kapitel VERLUSTFUNKTION.
 
 
-
 \subsubsection{Aktivierungsfunktion}
-- Seite 9
-- Berechnet die Abweichungen der Genauigkeit des neuronalen Netzwerkes mit der Verlustfunktion
-- Je kleiner der Wert, desto besser
+Mithilfe der Aktivierungsfunktion kann die KI eine nicht lineare Regression durchführen, denn aus der Gleichung 4.2 wird deutlich,
+dass alle Operationen linear sind, wenn nur der Paramater der Funktion $f^{(\alpha)}(x)$ betrachtet wird. Für eine nicht lineare Regression sollte die
+Aktivierungsfunktion differenzierbar sein. Dafür gibt es verschiedene Formen von Aktivierungsfunktionen, die in der Praxis angewendet werden.
+Eine der meist verwendeten Aktivierungsfunktionen ist der Rectified linear unit (ReLU):
+\begin{equation}
+    f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = \left\{
+	\begin{array}{ll}
+		\bar{x}_i^{(\alpha)}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
+		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} \leq 0
+	\end{array}
+    \right.
+\end{equation}
+Gründe für die Nutzung ist die Effizienz für linear gebaute Neuronale Netzwerke, sowie die Berechnung der Werte. Außerdem kann durch ReLU
+Neuronen dauerhaft deaktiviert werden, da alle Werte, die $\leq 0$ sind, zu $0$ gesetzt werden.
+Eine weitere Aktivierungsfunktion, die für die Facharbeit verwendet wird ist die Softmax Funktion:
+\begin{equation}
+    f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = \frac{e^{\bar{x}_i^{(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{\bar{x}_i^{(\alpha)}}}
+\end{equation}
+Meistens wird die Aktivierungsfunktion an der letzte Schicht verwendet, denn der Zweck dieser Aktivierungsfunktion ist es mithilfe des Vektors
+$ \vec{x}^{(A)} $ in einen neuen Vektor gleicher Dimension zu erstellen, deren Elemente zusammenaddiert $1$ ergibt. Der Wertebereich der Funktion
+liegt bei $[0;1]$. Dies kann dann in einer Wahrscheinlichkeitsverteilung dargestellt werden. Dies erleichtert die Dokumentierung der Ergebnisse der KI
+und eine Rückschlussführung, warum die KI wahrscheinlich diese Zahl nimmt, ist möglich.
+
 
 \subsection{Feature Extraction??/Merkmalsextraktion (DeepL)}
 Die Merkmalsextraktion besteht aus mehreren Schichten von Operationen mit dem das eingebene Bild verarbeitet wird.
@@ -374,27 +405,27 @@ Paar Formeln, wobei gilt:
 Linare Funktion zwischen zwei Neuronenschichten:
 \[ \vec{x}^{(\alpha)}=f^{(\alpha)}(W^{(\alpha)} \vec{x}^{(\alpha-1)} + \vec{b}^{(\alpha)}) \]
 RelU:
-\[ x_i^{(\alpha)} := f^{(\alpha)}(x_i^{'(\alpha)}) \]
+\[ x_i^{(\alpha)} := f^{(\alpha)}(\bar{x}_i^{(\alpha)}) \]
 \[ x_i^{(\alpha)}= \left\{
 	\begin{array}{ll}
-		x_i^{'(\alpha)}  & \mathrm{falls } x_i^{'(\alpha)} > 0 \\
-		0 & \mathrm{falls } x_i^{'(\alpha)} \leq 0
+		\bar{x}_i^{(\alpha)}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
+		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} \leq 0
 	\end{array}
 \right. \]
 Ableitung von RelU:
-\[ \frac{\partial x_i^{(\alpha)}}{\partial x_i^{'(\alpha)}} = \left\{
+\[ \frac{\partial x_i^{(\alpha)}}{\partial \bar{x}_i^{(\alpha)}} = \left\{
 	\begin{array}{ll}
-		1  & \mathrm{falls } x_i^{'(\alpha)} > 0 \\
-		0 & \mathrm{falls } x_i^{'(\alpha)} \leq 0
+		1  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
+		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{'(\alpha)} \leq 0
 	\end{array}
 \right. \]
 Softmax:
-\[ x_i^{(\alpha)} = \frac{e^{x_i^{'(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{x_i^{'(\alpha)}}} \]
+\[ x_i^{(\alpha)} = \frac{e^{\bar{x}_i^{(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{\bar{x}_i^{(\alpha)}}} \]
 Ableitung von Softmax:
-\[ \frac{\partial x_i^{(\alpha)}}{\partial x_k^{'(\alpha)}} = \left\{
+\[ \frac{\partial x_i^{(\alpha)}}{\partial \bar{x}_k^{(\alpha)}} = \left\{
 	\begin{array}{ll}
-		x_i^{(\alpha)}(1-x_k^{(\alpha)})  & \mbox{falls } i = k \\
-		-x_i^{(\alpha)}x_k^{(\alpha)} & \mbox{falls } i \neq k
+		x_i^{(\alpha)}(1-x_k^{(\alpha)})  & \mathrm{falls} \mkern5mu i = k \\
+		-x_i^{(\alpha)}x_k^{(\alpha)} & \mathrm{falls} \mkern5mu i \neq k
 	\end{array}
 \right. \]
 Cross Entropy:
@@ -402,17 +433,18 @@ Cross Entropy:
 Ableitung von Cross Entropy:
 \[ \frac{\partial C}{\partial x_i^{(A)}} = -\frac{y_i}{x_i^{(A)}} \]
 Backpropagation Bias FNN:
-\[ \frac{\partial C}{\partial b_i^{(\alpha)}} = \frac{\partial C}{\partial x_i^{'(\alpha)}} \]
+\[ \frac{\partial C}{\partial b_i^{(\alpha)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} \]
 Backpropagation Weight FNN:
-\[ \frac{\partial C}{\partial w_{i,j}^{(\alpha)}} = \frac{\partial C}{\partial x_i^{'(\alpha)}} x_j^{(\alpha-1)} \]
+\[ \frac{\partial C}{\partial w_{i,j}^{(\alpha)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} x_j^{(\alpha-1)} \]
 Backpropagation Error FNN:
-\[ \frac{\partial C}{\partial x_{j}^{(\alpha-1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial x_i^{'(\alpha)}} w_{i,j}^{(\alpha)} \]
+\[ \frac{\partial C}{\partial x_{j}^{(\alpha-1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} w_{i,j}^{(\alpha)} \]
 
 
 \newpage
 \nolinenumbers{}
-\section{Literaturverzeichnis}
-{\renewcommand{\section}[2]{}
+%\section{Literaturverzeichnis} wenn Literaturverzeichnis dabei sein muss in der Gliederung
+{%\renewcommand{\section}[2]{}
+\renewcommand\refname{Literaturverzeichnis}
 \hypersetup{linkcolor=red}
 \renewcommand\UrlFont{\color{black}\normalfont}
 \begin{thebibliography}{15}
@@ -469,7 +501,7 @@ Backpropagation Error FNN:
 \end{thebibliography}
 }
 \newpage
-\section{Schülererklärung}
+\section*{Schülererklärung}
 Hiermit erkläre ich, dass ich die vorliegende Seminarfacharbeit selbstständig angefertigt,
 keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Seminarfacharbeit,
 die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken entnommen wurden,

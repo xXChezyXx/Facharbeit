@@ -1,28 +1,25 @@
-\contentsline {section}{\numberline {1}Abkürzungsverzeichnis}{3}{section.1}%
-\contentsline {section}{\numberline {2}Einleitung}{4}{section.2}%
-\contentsline {section}{\numberline {3}Künstliche Intelligenz}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Überwachtes Lernen}{5}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Voraussetzung für mehrschichtiges Lernen}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Datensatz}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Künstliches neuronales Netzwerk}{6}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Konvolutionales neuronales Netzwerk}{7}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Klassifikationsebene}{7}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Aktivierungsfunktion}{9}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Feature Extraction??/Merkmalsextraktion (DeepL)}{9}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}2D Konvolution}{10}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Max-Pooling}{10}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Flattening??}{10}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}Verlustfunktion}{11}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Optimierung}{11}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Fehlerrückführung}{11}{subsubsection.5.4.1}%
-\contentsline {section}{\numberline {6}Umsetzung}{11}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Werkzeuge}{11}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Trainingsphase}{11}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Auswertung}{11}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Trainingsdaten}{11}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}Validationsdaten}{11}{subsubsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {6.3.3}Testdaten}{11}{subsubsection.6.3.3}%
-\contentsline {section}{\numberline {7}Schlussfolgerung}{11}{section.7}%
-\contentsline {section}{\numberline {8}Literaturverzeichnis}{13}{section.8}%
-\contentsline {section}{\numberline {9}Schülererklärung}{14}{section.9}%
-\contentsline {section}{\numberline {10}Zusatz: ChatGPT}{14}{section.10}%
+\contentsline {section}{\numberline {1}Einleitung}{4}{section.1}%
+\contentsline {section}{\numberline {2}Künstliche Intelligenz}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Überwachtes Lernen}{5}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Voraussetzung für mehrschichtiges Lernen}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datensatz}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Künstliches neuronales Netzwerk}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Konvolutionales neuronales Netzwerk}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Klassifikationsebene}{8}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Aktivierungsfunktion}{9}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Feature Extraction??/Merkmalsextraktion (DeepL)}{10}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}2D Konvolution}{10}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Max-Pooling}{11}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Flattening??}{11}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Verlustfunktion}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Optimierung}{11}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Fehlerrückführung}{11}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {5}Umsetzung}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Werkzeuge}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Trainingsphase}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Auswertung}{12}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Trainingsdaten}{12}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Validationsdaten}{12}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Testdaten}{12}{subsubsection.5.3.3}%
+\contentsline {section}{\numberline {6}Schlussfolgerung}{12}{section.6}%
+\contentsline {section}{\numberline {7}Zusatz: ChatGPT}{15}{section.7}%
