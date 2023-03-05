@@ -1,8 +1,7 @@
 % TODOLIST:
 % Abbildung für Nervenzelle aussuchen. Vielleicht nehme ich das vom Buch
 % Format später alles fixxen
-% Merkmale erklären
-% Davor Backpropagation erklären, damit ich überall die Ableitungen hinzufügen kann
+%??? fixxen
 
 \documentclass[11pt]{article}
 \usepackage{geometry}
@@ -114,18 +113,23 @@
 \newpage
 \rfoot{Seite \thepage}
 
-
-\section*{Abbildungsverzeichnis}
-- Seite 2 bis 3
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\listoffigures
 
 \newpage
-
-
-\section*{Abkürzungsverzeichnis}
+\section*{Abkürzungs- \& Akronymverzeichnis}
 
 \begin{acronym}
 \acro{KI}{Künstliche Intelligenz}
 \acro{CNN}{Faltendes Neuronales Netzwerk}
+\acro{FNN}{Vorwärtsgerichtetes Neuronales Netzwerk}
+\acro{ReLU}{Rectified Linear Unit}
+\acro{Backpropagation}{Fehlerzurückführung}
+\acro{Cross Entropy}{Kreuzentropie}
+\acro{Overfitting}{Überanpassung}
+\acro{Underfitting}{Unteranpassung}
+\acro{Accuracy}{Genauigkeit}
+\acro{Cross Correlation}{Kreuzkorrelation}
 \end{acronym}
 \newpage
 
@@ -161,7 +165,7 @@ unterteilt werden.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/ki\_kategorie}
-    \caption{Unterkategorien der Künstliche Intelligenz.}
+    \caption[Unterkategorien der Künstliche Intelligenz]{Die KI besitzt 2 Unterkategorien, Maschinelles Lernen und Mehrschichtiges Lernen.}
 \end{figure}
 Eine Unterkategorie der KI wäre der Bereich Maschinelles Lernen. Maschinelles Lernen versucht mithilfe von Algorithmen mit einer großen Anzahl von
 Daten ein Muster zu erkennen. Dazu werden die aus Daten gewonnen Erkenntnisse für Problemlösung verwendet oder der Algorithmus wird auf
@@ -178,7 +182,8 @@ die Antwort, die die KI ausgegeben hat, übereinstimmt.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/slearning}
-    \caption{Ablauf eines überwachtes Lernen.}
+    \caption[Ablauf eines überwachtes Lernen]{Zuerst wird die Eingabe verwendet, um zu lernen. Dafür verwendet die KI eine Lernstrategie. Nachdem etwas
+    ausgegeben wird, werden die Ausgaben vergliechen.}
 \end{figure}
 Falls sie nicht übereinstimmt, lernt die KI aus den Fehlern und verbessert sich
 dadurch. Überwachtes Lernen ist eine angemessene Methode für das Problem der Facharbeit, da die Antwort, die die KI ausgibt, übereinstimmen muss.
@@ -200,7 +205,7 @@ es sich handelt, damit später geprüft werden kann, ob die KI die Zahl richtig 
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/number}
-    \caption{Handgeschriebene Zahl als Abbildung in 28\times28 Pixeln dargestellt, dabei ist die richtige Ausgabe die Zahl 5.}
+    \caption[Handgeschriebene Zahl 5]{Handgeschriebene Zahl als Abbildung in 28\times28 Pixeln dargestellt, dabei ist die richtige Ausgabe die Zahl 5.}
 \end{figure}
 Der Datensatz ist gut zum Lernen, denn sie besitzt keine Fehlwerte oder verzerrende Bilder, die die KI beim Lernen stören kann. Auch ist die
 Auflösung in Ordnung und 70000 Bilder sind für kleine Aufgaben angemessen.
@@ -213,95 +218,126 @@ weiterzuleiten, falls das Signal ankommen sollte. Damit das Signal ankommt, brau
 verwendet, um Signale transportieren zu können und besteht aus einer lange dünne Röhre. Diese Röhre kann das Signal zu den Synapsen weiterleiten, unter Voraussetzung, dass der Schwellenwert erreicht ist.
 Fall er nicht erreicht werden sollte, wird das Signal abgebrochen. Der Schwellenwert wird erreicht, wenn genug Neurotransmitter vorhanden sind
 WAS ABSOLUT EINFACH DARGSTELLT IST UND EIGENTLICH VERBESSERT WERDEN MUSS, ABER ICH FRAGE ZUR SICHERHEIT NOCHMAL NACH. Sobald das Signal ankommt, werden die Neurotransmitter ausgeschüttet und die Dendriten der anderen verbunden Neuronen nehmen sie auf.
-Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidung, ob das Signal weitergeleitet werden soll, aber abgebrochen wird.
+Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidung, ob das Signal weitergeleitet werden soll oder abgebrochen wird.
 Es ensteht eine Kettenreaktion.
 Da das menschliche Gehirn imitiert werden soll, werden künstliche Neuronen erschaffen, die einen Wert von den vorherigen künstlichen Neuronen verarbeitet wurden.
 Durch die ganzen Verbindungen zwischen den Neuronen wird das auch als Netzwerk bezeichnet. Viele Eigenschaften der Neuronen werden mitgenommen, wie zum Beispiel die Dendriten, die Synapsen, sowie
-der Schwellenwert, in der Informatik auch Bias genannt. Der Bias spielt in Kapitel FORWARD NETWORK eine Rolle. Unterschied ist aber,
+der Schwellenwert, in der Informatik auch Bias genannt. Der Bias spielt im Kapitel \nameref{fcnn} eine Rolle. Unterschied ist aber,
 dass die künstlichen Neuronen deren Struktur nicht ändern können, dafür können denen aber Werte gegeben werden. Das bedeutet, dass das künstliche Neuron
 negative Werte annehmen kann, was bei den Neuronen nicht der Fall ist, da der Axon nur das Signal weiterleiten oder abbrechen kann. Sie können auch mit 0 und 1 bezeichnet werden.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/neural\_network}
-    \caption{Künstliches Neuronales Netz mit insgesamt 37 künstliche Neuronen in 6 Schichten verteilt.}
+    \caption[Künstliches Neuronales Netzwerk]{Künstliches Neuronales Netzwerk mit insgesamt 37 künstliche Neuronen in 6 Schichten verteilt.}
 \end{figure}
 Das Netzwerk kann unterschiedliche Anordnungen von künstlichen Neuronen besitzen. Die geeignetste Anordnung nennt sich das
 konvolutionales neuronales Netzwerk (CNN), denn sie wird häufig für Bildererkennung verwendet. Grund dafür ist die Extrahierung der Merkmale
 des Bildes. Denn bevor das Bild an die künstlichen Neuronen weitergeleitet werden, werden unnötige Merkmale mithilfe von Konvolution aus dem Bild entfernt, sodass der
-Lernprozess der KI auf das Wichtigste begrenzt wird.
+Lernprozess der KI auf das Wichtigste begrenzt wird. Welche Merkmale eines Bildes gemeint ist, wird im Kapitel \nameref{feature} verdeutlicht.
 
 \section{Konvolutionales neuronales Netzwerk}
 
-Das CNN kann in zwei Bereichen gegliedert werden. Der erste Bereich nennt sich
-Merkmalsextraktion und ist dafür zuständig, die wichtige Merkmale des Bildes herauszufiltern. Im zweiten Bereich werden die
-wichtigen Merkmalen aus der Merkmalsextraktion in die sogenannte Klassifikationsebene weitergeleitet. Dort fängt der Lernprozess
+Das CNN kann in zwei Bereichen gegliedert werden. Im ersten Bereich werden Merkmale des Bildes extrahiert, wie zum Beispiel Ecken, Kurven, etc. Diese nennt sich Feature Extraction.
+Die Extrahierung wird durch 2D Convolution berechnet. Im zweiten Bereich werden die
+wichtigen Merkmalen aus der Feature Extraction in die sogenannte Klassifikationsebene weitergeleitet. Dort fängt der Lernprozess
 der KI an, die dann am Ende des Netzwerkes eine Klasse ausgibt.
 
-\subsection{Klassifikationsebene}
+\subsection{Klassifikationsebene}\label{fcnn}
 In der Klassifikationsebene befindet sich das künstliches neuronales Netzwerk, die eine ähnliche Struktur wie bei Abbildung 4 hat.
-Diese Struktur nennt sich auch Fully Connected Neural Network und ist in mehreren Schichten aufgebaut. In Abbildung 4 wäre die Anzahl
+Diese Struktur nennt sich auch Vorwärtsgerichtetes Neuronales Netzwerk (FNN) und ist in mehreren Schichten aufgebaut. In Abbildung 4 wäre die Anzahl
 der Schichten $A = 6$. Die erste Schicht nennt sich Eingabeschicht, denn von dort kommen die Daten in die Neuronen rein, während bei
 der letzte Schicht die KI ein Ergebnis ausgibt. Diese Schicht heißt Ausgabeschicht. Die Schichten dazwischen werden ausgeblendete Schichten genannt.
 Die ausgeblendete Schichten sind wichtige Teile des Netzwerkes, denn durch diese werden Merkmale gesucht und analysiert.
 Das Netzwerk läuft also von links nach rechts durch. Das gibt nochmal
-eine deutlich stärkere Lerntiefe für die KI.\@ Die einzelne Neuronen können einen Wert besitzen, sie wird als $ x_{i}^{(\alpha)} $ definiert,
-wobei $ \alpha \in \{1,\ldots,A\} $ gilt. Der Index $i$ beschreibt um welches Neuron in der Schicht $\alpha$ es sich handelt. Dieser Wert
+eine deutlich stärkere Lerntiefe für die KI.\@ Die einzelne Neuronen können einen Wert besitzen, sie wird als $ x_{i}^{(\alpha,\beta)} $ definiert,
+wobei $ \alpha \in \{1,\ldots,A\} $ gilt. Der Index $i$ beschreibt um welches Neuron in der Schicht $\alpha$ es sich handelt. Der Wert $\beta$ wird später
+verwendet. Für die Einheitlichkeit der Formeln steht in dem Fall $\beta$ in der Variable. In der Klassifikationsebene bleibt $\beta = 1$. Dieser Wert
 lässt sich aus den ganzen Verbindungen der vorherigen Schicht berechnen, indem sie wie in Abbildung 5 addiert werden. Dabei werden
-die einzelne Werte $ x_{j}^{(\alpha-1)} $ mit einem Gewicht $ w_{i,j}^{(\alpha)} $ multipliziert, womit $ j \in \{1,\ldots,N_{\alpha-1}\} $ gilt.
+die einzelne Werte $ x_{j}^{(\alpha-1,1)} $ mit einem Gewicht $ w_{i,j}^{(\alpha,1)} $ multipliziert, womit $ j \in \{1,\ldots,N_{\alpha-1}\} $ gilt.
 $ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/verbindung}
-    \caption{Verbindungen zwischen den Neuronen.}
+    \caption[Verbindungen zwischen den Neuronen]{Die Verbindungen zwischen den Neuronen werden mit den Parameter $w$ erweitert.}
 \end{figure}
 Allgemein gilt dann für die Berechnung
 \begin{equation}
-    \bar{x}_{i}^{(\alpha)} := (\sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
+    \label{xwithoutfunction}
+    \bar{x}_{i}^{(\alpha,1)} := \sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha,1)} x_{j}^{(\alpha-1,1)} + b_{i}^{(\alpha,1)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
 \end{equation}
-Das $ b_{i}^{(\alpha)} $ in der Gleichung steht für Bias und ist ein weiterer Parameter zum Einstellen wie das Gewicht. Beide spielen hier eine wichtige Rolle
+Das $ b_{i}^{(\alpha,1)} $ in der Gleichung steht für Bias und ist ein weiterer Parameter zum Einstellen wie das Gewicht. Beide spielen hier eine wichtige Rolle
 für das Weiterleiten der Neuronen. Das Gewicht entscheidet, wie wichtig der Wert vom Neuron ist. Je höher der Wert ist, desto entscheidener
-ist das Neuron. Der Bias stellt ein, wie leicht das Neuron sich aktiviert. Auch hier gilt, je größer der Wert, desto entscheidener ist das Neuron.
-Wichtig ist anzumerken, dass die Gewichte und die Biases verstellbare Parameter sind, die für das Lernen der KI eine wichtige Rolle
-spielt. Eine weitere Sache, die hinzugefügt werden muss, ist die Aktivierungsfunktion, denn sie gibt das Netzwerk eine Komplexität.
+ist das Neuron. Wichtig ist anzumerken, dass die Gewichte und die Biases verstellbare Parameter sind, die für das Lernen der KI eine wichtige Rolle
+spielt. Damit die KI lernen kann, müssen die Parameter $w$ und $b$ optimal gesetzt werden, sodass die KI richtige Voraussagen treffen kann, um welche Zahl es sich handelt.
+Dafür wird die Fehlerrückführung verwendet. Erstmal werden nur die partielle Ableitungen berechnet. Warum sie gebraucht werden wird im Kapitel \nameref{back} genauer
+erläutert. So kann in der Gleichung~\ref{xwithoutfunction} partiell nach drei Variablen der Funktion $C(\vec{y},\vec{x}^{(A,1)})$ abgeleitet werden: $x_{j}^{(\alpha-1,1)}$, $w_{i,j}^{(\alpha,1)}$ und $b_{i}^{(\alpha,1)}$.
+Die Funktion $C(\vec{y},\vec{x}^{(A,1)})$ wird in Kaptiel \nameref{lost} genauer erläutert. Sie kommt in dem Fall direkt vor, da die partiellen Ableitungen
+davor für die einzelnen Kapiteln schon vorgeschrieben sind.???
+Folgendes ergibt sich:
+\begin{equation}
+    \frac{\partial C}{\partial b_i^{(\alpha,1)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha,1)}}
+\end{equation}
+\begin{equation}
+    \frac{\partial C}{\partial w_{i,j}^{(\alpha,1)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha,1)}} x_j^{(\alpha-1,1)}
+    \label{w}
+\end{equation}
+\begin{equation}
+    \frac{\partial C}{\partial x_{j}^{(\alpha-1,1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial \bar{x}_i^{(\alpha,1)}} w_{i,j}^{(\alpha,1)}
+\end{equation}
+Eine weitere Sache, die hinzugefügt werden muss, ist die Aktivierungsfunktion, denn sie gibt das Netzwerk eine Komplexität.
 Ohne diese Komplexität wäre das Netzwerk linear, was Nachteile mit sich bringt für die KI. In Abbildung 6 ist die Regression bei einer
 nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/regression}
-    \caption{In den ersten beiden Graphen sind die noch gut mit linearen Regressionen lösbar. Beim dritten Graph ist es
-    unmöglich eine genaue Regression zu bekommen mit der lineare Regression. Dafür wird eine nicht linieare Regression verwendet.}
+    \caption[Lineare Regression und nicht lineare Regression]{Im ersten Graph ist sie gut mit der lineare Regressionen lösbar. Beim zweiten Graph ist es
+    unmöglich eine genaue Regression zu bekommen mit einer lineare Regression. Dafür wird eine nicht linieare Regression verwendet.}
 \end{figure}
 Welche Aktivierungsfunktionen verwendet werden kommt in Lektion AKTIVIERUNGSFUNKTION dran. So ergibt sich
 \begin{equation}
-    x_{i}^{(\alpha)} := f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = f^{(\alpha)}((\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha)} x_{j}^{(\alpha-1)}) + b_{i}^{(\alpha)}).
+    x_{i}^{(\alpha,1)} := f^{(\alpha,1)}(\bar{x}_{i}^{(\alpha,1)}) = f^{(\alpha,1)}(\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha,1)} x_{j}^{(\alpha-1,1)} + b_{i}^{(\alpha,1)}).
 \end{equation}
 Nun kann die Schicht auch als einen Vektor angesehen werden, wobei die Neuronen die Elemente vom Vektor sind. Folglich kann das Netzwerk
 in Abbildung 4 in einem Matrixblock umgeschrieben werden. So definiert sich
-\begin{equation}
-    \vec{x}^{(\alpha)} := \begin{bmatrix}x_{1}^{(\alpha)} \\ x_{2}^{(\alpha)} \\ \ldots \\ x_{N_{\alpha}}^{(\alpha)} \end{bmatrix}.
+\begin{equation}\label{withfunction}
+    \vec{x}^{(\alpha,1)} := \begin{bmatrix}x_{1}^{(\alpha,1)} \\ x_{2}^{(\alpha,1)} \\ \ldots \\ x_{N_{\alpha}}^{(\alpha,1)} \end{bmatrix}.
 \end{equation}
 Sobald die letzte Schicht erreicht ist, berechnet die Verlustfunktion Fehlermaße des Netzwerkes und gibt Aussage darüber, wie gut
-unsere KI ist. Mehr dazu im Kapitel VERLUSTFUNKTION.
+unsere KI ist. Mehr dazu im Kapitel \nameref{lost}.
 
 
 \subsubsection{Aktivierungsfunktion}
-Mithilfe der Aktivierungsfunktion kann die KI eine nicht lineare Regression durchführen, denn aus der Gleichung 4.2 wird deutlich,
-dass alle Operationen linear sind, wenn nur der Paramater der Funktion $f^{(\alpha)}(x)$ betrachtet wird. Für eine nicht lineare Regression sollte die
+Mithilfe der Aktivierungsfunktion kann die KI eine nicht lineare Regression durchführen, denn aus der Gleichung~\ref{withfunction} wird deutlich,
+dass alle Operationen linear sind, wenn nur der Paramater der Funktion $f^{(\alpha,1)}(x)$ betrachtet wird. Für eine nicht lineare Regression sollte die
 Aktivierungsfunktion differenzierbar sein. Dafür gibt es verschiedene Formen von Aktivierungsfunktionen, die in der Praxis angewendet werden.
 Eine der meist verwendeten Aktivierungsfunktionen ist der Rectified linear unit (ReLU):
 \begin{equation}
-    f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = \left\{
+    f^{(\alpha,1)}(\bar{x}_{i}^{(\alpha,1)}) = \left\{
 	\begin{array}{ll}
-		\bar{x}_i^{(\alpha)}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
-		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} \leq 0
+		\bar{x}_i^{(\alpha,1)}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha,1)} > 0 \\
+		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha,1)} \leq 0
+	\end{array}
+    \right.
+\end{equation}
+Die partielle Ableitung nach $\bar{x}_i^{(\alpha,1)}$ zur Funktion $C(\vec{y},\vec{x}^{(A,1)})$ ist:
+\begin{equation}
+    \frac{\partial C}{\partial \bar{x}_i^{(\alpha,1)}} = \left\{
+	\begin{array}{ll}
+		\frac{\partial C}{\partial {x}_i^{(\alpha,1)}}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha,1)} > 0 \\
+		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{'(\alpha,1)} \leq 0
 	\end{array}
     \right.
 \end{equation}
 Gründe für die Nutzung ist die Effizienz für linear gebaute Neuronale Netzwerke, sowie die Berechnung der Werte. Außerdem kann durch ReLU
 Neuronen dauerhaft deaktiviert werden, da alle Werte, die $\leq 0$ sind, zu $0$ gesetzt werden.
+Die Ableitungs
 Eine weitere Aktivierungsfunktion, die für die Facharbeit verwendet wird ist die Softmax Funktion:
+\begin{equation}\label{softmax}
+    f^{(\alpha,1)}(\bar{x}_{i}^{(\alpha,1)}) = \frac{e^{\bar{x}_i^{(\alpha,1)}}}{\sum_{j=1}^{N_{\alpha}} e^{\bar{x}_i^{(\alpha,1)}}}
+\end{equation}
+Die partielle Ableitung nach $\bar{x}_i^{(\alpha,1)}$ zur Funktion $C(\vec{y},\vec{x}^{(A,1)})$ ist:
 \begin{equation}
-    f^{(\alpha)}(\bar{x}_{i}^{(\alpha)}) = \frac{e^{\bar{x}_i^{(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{\bar{x}_i^{(\alpha)}}}
+    \frac{\partial C}{\partial \bar{x}_k^{(\alpha,1)}} = \frac{\partial C}{\partial {x}_i^{(\alpha,1)}} (\delta_{i,k}x_{i}^{(\alpha,1)}-x_{i}^{(\alpha,1)}x_{k}^{(\alpha,1)})
 \end{equation}
 Meistens wird die Aktivierungsfunktion an der letzte Schicht verwendet, denn der Zweck dieser Aktivierungsfunktion ist es mithilfe des Vektors
 $ \vec{x}^{(A)} $ in einen neuen Vektor gleicher Dimension zu erstellen, deren Elemente zusammenaddiert $1$ ergibt. Der Wertebereich der Funktion
@@ -309,25 +345,30 @@ liegt bei $[0;1]$. Dies kann dann in einer Wahrscheinlichkeitsverteilung dargest
 und eine Rückschlussführung, warum die KI wahrscheinlich diese Zahl nimmt, ist möglich.
 
 
-\subsection{Feature Extraction??/Merkmalsextraktion (DeepL)}
-Die Merkmalsextraktion besteht aus mehreren Schichten von Operationen mit dem das eingebene Bild verarbeitet wird.
-Eine Hauptoperation ist der 2D Konvolution, denn diese Operation ist dafür zuständig, dass wichtige Merkmale gefiltert werden.
+\subsection{Feature Extraction}\label{feature}
+Die Feature Extraction besteht aus mehreren Schichten von Operationen mit dem das eingebene Bild verarbeitet wird.
+Eine Hauptoperation ist der 2D Konvolution, denn diese Operation ist dafür zuständig, dass wichtige Merkmale extrahiert werden.
+Dafür werden verschiedene Filter angewendet, um verschiedene Arten von Merkmalen des Bilder zu extrahieren.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400pt, keepaspectratio]{images/filter}
+    \caption[Verschiedene Extraktionsmöglichkeiten]{Hier sind verschiedene Extrahierungen zu erkennen mit verschiedenen Aufgaben. Das erste Bild mit der Operation Identity ist das Originalbild.}
+\end{figure}
 Weitere wichtige Operationen ist der Max-Pooling und der Flattening. Aufgabe von Max-Pooling ist es unnötige Merkmale
 zu ignorieren, indem nur die hellsten Pixel rausgefiltert werden. Die Dimension des Bildes halbiert sich. Flattening ist für die Übertragung auf die Klassifikationseben zuständig,
 indem die Matrix des Bildes in einen Vektor geflacht wird, sodass die KI optimal lernen kann.
-ABBILDUNG (FEATURE EXTRACTION, HIER KÖNNEN WIR JA SCHONMAL ANFANGEN UNSERE KI ZU BAUEN)
 Das Bild kann in einer 28\times28 Matrix dargestellt werden
 \begin{equation}
     X^{(1,1)} := (x_{ij}) \quad i \in \{1,\ldots,28\}, j \in \{1,\ldots,28\}.
 \end{equation}
 Der erste Index beschreibt auf welcher Schicht die Variable sich befindet und der zweite Index beschreibt auf welches
 Bild sie drauf bezieht, denn in einer Schicht können mehrere Bilder vorkommen. Dies nennt sich Tiefe. Da am Anfang aber nur ein Bild eingegeben wird, gilt
-$B^{(1)} = 1$. Für die nächsten Schichten gilt im Allgemeinen
-\begin{equation}
+$N_{\beta}^{(1)} = 1$. Für die nächsten Schichten gilt im Allgemeinen
+\begin{equation}\label{newlayer}
     X^{(\alpha,\beta)} := (x_{ij}) \quad i \in \{1,\ldots,m_{x}^{(\alpha,\beta)}\}, j \in \{1,\ldots,n_{x}^{(\alpha,\beta)}\}.
 \end{equation}
 Die Werte $m_{x}^{(\alpha,\beta)}$ und $n_{x}^{(\alpha,\beta)}$ werden basiert auf die Operation berechnet, wobei
-$\alpha \in \{1,\ldots,A\}$ und $\beta \in \{1^{(\alpha)},\ldots,B^{(\alpha)}\}$. Dabei ist die Anzahl der Tiefe von der jeweilige Schicht abhängig.
+$\alpha \in \{1,\ldots,A\}$ und $\beta \in \{1^{(\alpha)},\ldots,N_{\beta}^{(\alpha)}\}$. Dabei ist die Anzahl der Tiefe von der jeweilige Schicht abhängig.
 
 
 \subsubsection{2D Konvolution}
@@ -336,61 +377,146 @@ eine neue Matrix definiert, die auch als Kernel genannt wird
 \begin{equation}
     K^{(\alpha,\beta)}:=(k_{i,j})^{(\alpha,\beta)} \quad i \in\{1;2;\ldots;m_{k}^{(\alpha,\beta)}\}, j \in\{1;2;\ldots;n_{k}^{(\alpha,\beta)}\}
 \end{equation}
-Wenn der Kernel nach bestimmten Mustern definiert wurde, entsteht durch die 2D Konvolution eine neue Matrix, in dem Fall ein neues Bild
-ABBILDUNG CONVOLUTION
-Diese neue Matrix wird definiert als 
-\begin{equation}
-    A := (a_{i,j}) \quad i \in \{1,\ldots,m_{a}\}, j \in \{1,\ldots,n_{a}\},
-\end{equation}
-wobei $ m_a = m_x - m_k + 1 $ und $ n_a = n_x - n_k + 1 $
+Der Kernel kann nach der Abbildung 7 verschiedene Formen von Matritzen annehmen, dadurch entsteht durch die 2D Konvolution eine neue Matrix, in dem Fall ein neues Bild
+Diese neue Matrix gilt für die nächste Schicht, weshalb die neue Matrix der Gleichung~\ref{newlayer} entspricht, wobei $ m_x \leftarrow m_x - m_k + 1 $ und $ n_x \leftarrow n_x - n_k + 1 $
 Da sowohl die Eingabe des Bildes, sowie der Kernel beide Matritzen sind, kann mit der 2D Konvolution gerechnet werden. Sie ist
 folgendermaßen defininiert
 \begin{equation}
     a_{i,j} = (X \ast K)_{i,j} := \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i-m'+1,j-n'+1}k_{m',n'}. \label{Conv}
 \end{equation}
-Eine weitere Operation, die sehr wichtig für die 2D Konvolution ist der Cross Correlation
+Eine weitere Operation, die sehr wichtig für die 2D Konvolution ist die Kreuzkorrelation (Cross Correlation)
 \begin{equation}
     a_{i,j} = (X \star K)_{i,j} := \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i+m'-1,j+n'-1}k_{m',n'}.
 \end{equation}
 Aus~\eqref{Conv} wird deutlich, dass Cross Correlation nichts anderes ist als eine 2D Konvolution, wo nur der Kernel um 180$^{\circ}$
-rotiert ist. Dies wird später für die Fehlerrückführung in Kapitel 6.4.1 wichtig sein. Wenn die Schichten und die Tiefen der
-Merkmalsextraktion berücksichtigt werden, so gilt für die nächste Schicht
+rotiert ist. Für die Operation können auch Biases, sowie Aktivierungsfunktionen angewandt werden. Dies ähnelt der Struktur der FCNN.
+Werden diese Eigenschaften hinzugefügt, folgt daraus für die 2D Convolution:
 \begin{equation}
-    x_{i,j}^{(\alpha,\beta)} = f^{(\alpha)}((\sum_{\beta'=1}^{B^{(\alpha-1)}} \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i+m'-1,j+n'-1}^{(\alpha-1,\beta')}k_{m',n'}^{(\alpha,\beta')})+b_{i,j}^{(\alpha,\beta)})
+    x_{i,j}^{(\alpha,\beta)} = f^{(\alpha)}(\sum_{\beta'=1}^{N_{\beta}^{(\alpha-1)}} \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i+m'-1,j+n'-1}^{(\alpha-1,\beta')}k_{m',n'}^{(\alpha,\beta')}+b_{i,j}^{(\alpha,\beta)})
 \end{equation}
-
+Für die Fehlerzurückführung (Backpropagation) werden die partielle Ableitungen nach $k_{i,j}^{(\alpha,\beta)}$, nach $b_{i,j}^{(\alpha,\beta)}$ und nach $x_{i,j}^{(\alpha-1,\beta)}$ zur Funktion $C$ gebraucht:
+\begin{equation}
+    \frac{\partial C}{\partial k_{i,j}^{(\alpha,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}} x_{i+i'-1,j+j'-1}^{(\alpha-1,\beta)} = (X^{(\alpha-1,\beta)} \star \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
+\end{equation}
+\begin{equation}
+    \frac{\partial C}{\partial b_{i,j}^{(\alpha,\beta)}} = \frac{\partial C}{\partial \bar{x}_{i,j}^{(\alpha,\beta)}}
+\end{equation}
+\begin{equation}
+    \frac{\partial C}{\partial x_{i,j}^{(\alpha-1,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}} k_{i-i'+1,j-j'+1}^{(\alpha,\beta)} = (K^{(\alpha,\beta)} \ast \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
+\end{equation}
 
 \subsubsection{Max-Pooling}
 
-\subsubsection{Flattening??}
-Damit die Ki mit der Matrix lernen kann, muss diese Matrix in einen Vektor umgewandelt werden
+\subsubsection{Übergang von Feature Extraction zu Klassifikationsebene}
+Nachdem die Merkmale der Bilder durch 2D Konvolution und Max-Pooling extrahiert wurden, muss diese Matrix zur Klassifikationsebene übertragen werden.
+Da aber die Klassifikationsebene nur einen Vektor als Eingabe annimmt, muss die Matrix abgeflacht werden. Mithilfe des Vektoroperators $vec()$ kann die
+Ausgangsmatrix der Feature Extraction in einen Vektor umgewandelt werden:
 \begin{equation}
-    \vec{x}^{(\alpha,\beta)} := vec_{n_{x}^{(\alpha,\beta)}, m_{x}^{(\alpha,\beta)}}(X^{(\alpha-1,\beta)T})
+    \vec{x}^{(\alpha,\beta)} = vec_{n_{x}^{(\alpha,\beta)}, m_{x}^{(\alpha,\beta)}}(X^{(\alpha-1,\beta)T})
 \end{equation}
+Dabei gibt die Indizes die die Dimension der Matrix an, die abgeflacht werden soll. Für die Backpropagation muss der Vektor aber wieder in einer Matrix mit
+der gleichen Dimension umgeformt werden. Dafür existiert eine Umkehrfunktion des Vektoroperators $vec^{-1}()$ die diese Berechnung durchführen kann:
+\begin{equation}
+    X^{(\alpha-1,\beta)} = vec^{-1}_{n_{x}^{(\alpha,\beta)}, m_{x}^{(\alpha,\beta)}}(\vec{x}^{(\alpha,\beta)})^{T}
+\end{equation}
+Dieser Übergang wird auch als Flattening benannt.
 
-\subsection{Verlustfunktion}
+\subsection{Verlustfunktion}\label{lost}
+Um auszuwerten, ob eine KI gute oder schlechte Vorhersagen trifft, werden Verlustfunktionen verwendet. Verlustfunktionen sind Funktionen, die Abweichungen
+der vorhergesagte Zahl $\vec{x}^{(A,1)}$ mit der Ausgangszahl $\vec{y}$ berechnet wird. Je größer die Abweichung ist, desto unpräziser trifft die KI Vorhersagen. Für die
+Optimierung bedeutet dies, dass der Wert der Verlustfunktion kleinstmöglich wird, sodass die KI präzise Vorhersagen treffen kann. Durch die Änderung der Paramater
+kann die Verlustfunktion minimiert werden, denn die Verlustfunktion sind
+von allen Parameter $w$,$b$ und $k$ in der Variable $\vec{x}^{(A,1)}$ abhängig.
+Es gilt:
+\begin{equation}
+    C(\vec{y},\vec{x}^{(A,1)}) \equiv C(\vec{y},\vec{w}) , \vec{w} \in Alle Parameter w b und k % Das muss ich definitiv umschreiben, absolut falsch
+\end{equation}
+Doch wie die Parameter richtig gesetzt werden, kommt in Kapitel
+\nameref{gradient}.\@ Für die Facharbeit wird die Kreuzentropie (Cross Entropy) verwendet. Sie ist folgendermaßen definiert:
+\begin{equation}
+    C(\vec{y},\vec{x}^{(A,1)}) = -\sum_{i=1}^{N_A} y_i \ln(x_i^{(A,1)})
+\end{equation}
+Die folgende partielle Ableitung nach $x_i^{(A,1)}$ ist:
+\begin{equation}
+    \frac{\partial C}{\partial x_i^{(A,1)}} = -\frac{y_i}{x_i^{(A,1)}}
+\end{equation}
+Voraussetzung der Cross Entropy ist, dass $\sum_{i=1}^{N_A} x_i^{(A,1)} = 1$ ergibt. Dies wird durch die Softmax Funktion in der Gleichung~\ref{softmax} erfüllt.
+Vorteil dieser Verlustfunktion ist zum einen, dass sie die Abweichungen präzise für die Wahrscheinlichkeitsverteilung berechnen kann. Außerdem funktioniert
+sie gut für Klassifikationen, denn die KI der Facharbeit basiert sich auf einer Klassifizierung. 
 
-\subsection{Optimierung}
-- Seite 10 bis 12
-- Für die Optimierung benutzen wir die ADAM Optimierer
-\subsubsection{Fehlerrückführung}
-- Eine Methode, um die Gradiente für die Optimierung zu berechnen
+\subsection{Optimierung}\label{gradient}
+Mithilfe der Optimierung kann die Abweichung der Verlustfunktion verringert werden, indem die Parameter optimal gewählt werden. In der Schulmathematik
+wird die erste Ableitung der Verlustfunktion genommen und auf $0$ gesetzt. Problem bei der Rechnung ist nun, dass in der Praxis die Anzahl der Parameter
+der KI sehr hoch sein kann. Es wird von mehrere tausende Paramater gesprochen. So ist die Berechnung der Parameter uneffizient und könnte für einen
+Rechner sehr lange dauern, bis sie perfekte Parameter für die Verlustfunktion findet. Deswegen werden auf Algorithmen zurückgegriffen, die diese
+Berechnungen deutlich zeitsparender durchführen können. Einer dieser Algorithmen nennt sich Gradientenverfahren. Das Gradientenverfahren besagt die höchste
+Steigung, die zurückgelegt werden kann, sie wird mit einen $\nabla C$ definiert:
+\begin{equation}\label{gradientdefinition}
+    \nabla C = \begin{bmatrix}\frac{\partial C}{\partial w_{1}} \\ \frac{\partial C}{\partial w_{2}} \\ \ldots \\ \frac{\partial C}{\partial w_{n}} \end{bmatrix}
+    % Wobei n = Anzahl aller Parameter ist ???
+\end{equation}
+Da aber das Minimun der Funktion gesucht wird, wird die tiefste Steigung
+benötigt, indem $\nabla C$ negativ wird, also $-\nabla C$. Aus der Gleichung~\ref{gradientdefinition} können die Elemente für die Annäherung der optimalen Parameter genutzt werden.
+So kann durch jede Iteration der Parameter aktualisiert werden:
+\begin{equation}
+    w_i \leftarrow w_i - \Delta w_i \equiv  w_i - \eta \frac{\partial C}{\partial w_{i}}
+\end{equation}
+Hier wurde ein neuer Paramater $\eta$ hinzugefügt, diese nennt sich Lernrate. Sie gibt an, wie schnell sie sich an das Mininum antasten soll.
+Es ist wichtig einen guten Wert für die Lernrate zu setzen, denn falls die Lernrate zu groß wird, kann sie vielleicht über das Mininum vorbeispringen.
+Wenn aber die Lernrate zu klein ist, dann dauert auch das Lernen deutlich länger, da die Optimierung langsamer am Minimum antastet.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400pt, keepaspectratio]{images/lrate}
+    \caption[Einstellen der Lernrate]{Sehr gut erkennbar sind die Iterationen: Wenn die Lernrate richtig gewählt ist, dann erreicht sie das Minimun schneller.}
+\end{figure}
+Trotz des Algorithmus kann die Berechnung immer noch nicht effizient genug sein, denn wenn als
+Beispiel der Datensatz von MNIST verwendet wird, dann müssen für alle 70000 Bilder die Gradienten berechnet werden. Diese Zeit kann erspart werden,
+indem nicht für alle Bilder den Gradient berechnen werden müssen. Als Beispiel soll nur der Gradient berechnet werden bei jedes 100. Bild. So werden die Gradienten statt
+für 70000 Bilder, nur 700 Bilder berechnet. Die Antastung des Minimums ist nicht sehr präzise, aber dennoch aussagekräftig und zeitsparend. Die
+Optimierung nennt sich Stochastisches Gradientenverfahren.
+\subsubsection{Backpropagation}\label{back}
+Um die Parameter zu aktualisieren muss der Wert $\frac{\partial C}{\partial w_{i}}$ berechnet werden. Mithilfe der Backpropagation kann dieser Wert
+berechnet werden, indem rückwärts gegangen wird vom FCNN.\@ Als Beispiel wird ein FCNN dargestellt mit drei Schichten. Für die Verlustfunktion soll der
+Cross Entropy verwendet werden. Ziel ist es den Parameter $w_{2,1}^{(3,1)}$ zu aktualisieren, weshalb $\frac{\partial C}{\partial w_{2,3}^{(2,1)}}$ gesucht ist.
+ABBILDUNG DES NETZWERKES.
+Dafür wird angeschaut, wie die Verlustfunktion $C$ von $w_{2,1}^{(3,1)}$ abhängt.
+Da die Werte bei jeder Schicht weitergegeben wurde, kann die Kettenregel angewendet werden:
+\begin{equation}
+    \frac{\partial C}{\partial w_{2,3}^{(2,1)}} = \frac{\partial C}{\partial x_2^{(3,1)}} \frac{\partial x_2^{(3,1)}}{\partial \bar{x}_2^{(3,1)}}
+    \frac{\partial \bar{x}_2^{(3,1)}}{\partial x_2^{(2,1)}} \frac{\partial x_2^{(2,1)}}{\partial \bar{x}_2^{(2,1)}}
+    \frac{\partial \bar{x}_2^{(2,1)}}{\partial w_{2,3}^{(2,1)}}
+\end{equation}
+Dies kann abgekürzt werden mit:
+\begin{equation}\label{einfacher}
+    \frac{\partial C}{\partial w_{2,3}^{(2,1)}} = \frac{\partial C}{\partial \bar{x}_2^{(2,1)}} \frac{\partial \bar{x}_2^{(2,1)}}{\partial w_{2,3}^{(2,1)}} \stackrel{(\ref{w})}{=} \frac{\partial C}{\partial \bar{x}_2^{(2,1)}} x_3^{(1,1)}
+\end{equation}
+Die Gleichung~\ref{einfacher} ist für die Umsetzung deutlich angenehmer, da der Wert $\frac{\partial C}{\partial \bar{x}_2^{(2,1)}}$ von der nächsten Schicht
+schon berechnet wurde. Dies bedeutet, dass nur der Wert $\frac{\partial \bar{x}_2^{(2,1)}}{\partial w_{2,3}^{(2,1)}}$ berechnet werden muss.
 
 \section{Umsetzung}
+Zuerst braucht es eine Struktur für das CNN.\@ Dafür wird eine Klasse Layer erstellt, die als Objekt angesehen werden soll. Dabei soll die Layer folgende
+Eigenschaften besitzen: Eine Eingabe und eine Ausgabe. Außerdem wird eine neue Klasse DenseLayer erstellt, die diese Eigenschaften der Klasse Layer erben.
+Der DenseLayer soll die Schichten im FCNN darstellen und die Parameter $w$ und $b$ als Variablen annehmen können. Weitere Klassen, wie Schichten für die
+Feature Extraction oder Aktivierungsfunktion und Verlustfunktion müssen erstellt werden. Vorteil an der Programmierung sind die Open Source Pakete, die das
+Internet anbietet. So müssen nicht die einzelne Elemente der Vektoren ausgerechnet werden, sondern kann alle Elemente des Verktors aufeinmal berechnen.
+Auch muss der Lernprozess programmiert werden, indem das Netzwerk durchläuft. Die Anzahl der Durchläufe des Netzwerkes kann bestimmt werden.
+Diese nennt sich auch Epochen. Am Ende werden verschiedene Diagramme generiert, die für die Analyse der KI nutzlich sein könnten.
+Mehr dazu im Kapitel \nameref{auswertung}.
 
 \subsection{Werkzeuge}
-- Seite 14
-- Python wird hier verwendet, da gut für Data Science
-- Hierfür wird NumPy benutzt für Matrix
-- Auch wird der Matplotlib verwendet für Visualisierungen
+Für die Umsetzung wird die Programmiersprache Python verwendet, denn Python wird in der Praxis größtenteils für Data Science verwendet.
+Python wird dafür verwendet, weil sie sehr gute Open Source Pakete besitzt. Dabei spielen zwei Pakete eine wichtige Rolle für die Umsetzung:
+NumPy und Matplotlib. NumPy ist ein Paket für Vektor- und Matrizenberechnungen und berechnet die Werte effizienter als Python selbst. Außerdem
+bietet sie sehr viele Operationen an, die für die KI notwendig sind. Der Matplotlib ist für die Visualisierung der Bilder, sowie die Filter von der
+Feature Extraction zuständig. Sie hilft den Nutzer die KI besser zu verstehen und nachzuvollziehen.
 
 \subsection{Trainingsphase}
 - Daten müssen in 3 Sets aufgeteilt werden: Training, Test und Validation
 - Irgendwo muss noch Overfitting und Underfitting rein, das mit Validation vermieden wird
 
-\subsection{Auswertung}
+\subsection{Auswertung}\label{auswertung}
 - Seite 14
-- Verschiedene Grafiken werden ausgewertet
+- Verschiedene Diagramme werden ausgewertet
 - Z.B. Lernverlauf
 - Accuracy anschauen
 - Wert der Verlustfunktion im Verlauf anschauen
@@ -404,41 +530,6 @@ Damit die Ki mit der Matrix lernen kann, muss diese Matrix in einen Vektor umgew
 Paar Formeln, wobei gilt:
 Linare Funktion zwischen zwei Neuronenschichten:
 \[ \vec{x}^{(\alpha)}=f^{(\alpha)}(W^{(\alpha)} \vec{x}^{(\alpha-1)} + \vec{b}^{(\alpha)}) \]
-RelU:
-\[ x_i^{(\alpha)} := f^{(\alpha)}(\bar{x}_i^{(\alpha)}) \]
-\[ x_i^{(\alpha)}= \left\{
-	\begin{array}{ll}
-		\bar{x}_i^{(\alpha)}  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
-		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} \leq 0
-	\end{array}
-\right. \]
-Ableitung von RelU:
-\[ \frac{\partial x_i^{(\alpha)}}{\partial \bar{x}_i^{(\alpha)}} = \left\{
-	\begin{array}{ll}
-		1  & \mathrm{falls} \mkern5mu \bar{x}_i^{(\alpha)} > 0 \\
-		0 & \mathrm{falls} \mkern5mu \bar{x}_i^{'(\alpha)} \leq 0
-	\end{array}
-\right. \]
-Softmax:
-\[ x_i^{(\alpha)} = \frac{e^{\bar{x}_i^{(\alpha)}}}{\sum_{j=1}^{N_{\alpha}} e^{\bar{x}_i^{(\alpha)}}} \]
-Ableitung von Softmax:
-\[ \frac{\partial x_i^{(\alpha)}}{\partial \bar{x}_k^{(\alpha)}} = \left\{
-	\begin{array}{ll}
-		x_i^{(\alpha)}(1-x_k^{(\alpha)})  & \mathrm{falls} \mkern5mu i = k \\
-		-x_i^{(\alpha)}x_k^{(\alpha)} & \mathrm{falls} \mkern5mu i \neq k
-	\end{array}
-\right. \]
-Cross Entropy:
-\[ C(\vec{y},\vec{x}^{(A)}) = -\sum_{i=1}^{N_A} y_i * \ln(x_i^{(A)}) \]
-Ableitung von Cross Entropy:
-\[ \frac{\partial C}{\partial x_i^{(A)}} = -\frac{y_i}{x_i^{(A)}} \]
-Backpropagation Bias FNN:
-\[ \frac{\partial C}{\partial b_i^{(\alpha)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} \]
-Backpropagation Weight FNN:
-\[ \frac{\partial C}{\partial w_{i,j}^{(\alpha)}} = \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} x_j^{(\alpha-1)} \]
-Backpropagation Error FNN:
-\[ \frac{\partial C}{\partial x_{j}^{(\alpha-1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial \bar{x}_i^{(\alpha)}} w_{i,j}^{(\alpha)} \]
-
 
 \newpage
 \nolinenumbers{}
@@ -506,7 +597,5 @@ Hiermit erkläre ich, dass ich die vorliegende Seminarfacharbeit selbstständig 
 keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Seminarfacharbeit,
 die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken entnommen wurden,
 mit genauer Quellenangabe kenntlich gemacht habe.
-
-\section{Zusatz: ChatGPT}
 
 \end{document}
