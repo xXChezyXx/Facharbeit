@@ -1,7 +1,9 @@
 % TODOLIST:
-% Abbildung für Nervenzelle aussuchen. Vielleicht nehme ich das vom Buch
 % Format später alles fixxen
-%??? fixxen
+% ??? fixxen
+% CAPS Sätze fixxen
+% Durchlesen und schauen, was man verbessern kann
+% Abbildung für das Beispiel fehlt (Für Optimierung erklären)
 
 \documentclass[11pt]{article}
 \usepackage{geometry}
@@ -192,8 +194,11 @@ Dabei ist anzumerken, dass die KI zwei Arten von Lösungen angeben kann. In dem 
 Jede Zahl wird als eine eigene Klasse zugeordnet. Die KI gibt aus, um welche Klasse es sich handelt.
 
 \section{Voraussetzung für mehrschichtiges Lernen}
-
-Irgendetwas schreiben für die Voraussetzung
+Im Gegensatz von maschinelles Lernen braucht das mehrschichtige Lernen sehr viele Daten. Es wird von mindestens 10000 Daten gesprochen.
+Denn je größer der Datensatz ist, desto besser schneidet mehrschichtiges Lernen ab als maschinelles Lernen. Im Gegenzug verbaucht diese Methode mehr
+Rechenleistung. So kann es mehrere Tage oder Wochen dauern, bis die KI fertig gelernt hat und einsatzbereit ist. Auch braucht die KI ein Modell zum
+Lernen, ein Künstliches Neuronales Netzwerk. Dafür gibt es verschieden Modelle von Netzwerken. Die Auswahl des Modells für die KI wird später im Kapitel
+\nameref{nn} erläutert.
 
 \subsection{Datensatz}
 Datensätze sind für die KIs das wichtigste Werkzeug für das Lernen. Denn die Qualität des Datensatzen bestimmt die Lerneffizienz der KI.
@@ -210,16 +215,22 @@ es sich handelt, damit später geprüft werden kann, ob die KI die Zahl richtig 
 Der Datensatz ist gut zum Lernen, denn sie besitzt keine Fehlwerte oder verzerrende Bilder, die die KI beim Lernen stören kann. Auch ist die
 Auflösung in Ordnung und 70000 Bilder sind für kleine Aufgaben angemessen.
 
-\subsection{Künstliches neuronales Netzwerk}
+\subsection{Künstliches neuronales Netzwerk}\label{nn}
 Im menschlichen Gehirn befinden sich großen Mengen von Neuronen, die miteinander interagieren. 
 Das Neuron besteht aus drei relevante Komponente. Der erste Komponent besteht aus Empfängern, die Signale von anderen verbundeten Neuronen empfängt.
 Sie werden auch Dendriten genannt. Ein weiterer Komponent wären die Synapsen. Die Aufgabe ist es sogenannte Neurotransmitter an anderen verbundenen Neuronen
 weiterzuleiten, falls das Signal ankommen sollte. Damit das Signal ankommt, braucht es den dritten Komponent, zwar den Axon. Sie wird als Leitungsbahn
 verwendet, um Signale transportieren zu können und besteht aus einer lange dünne Röhre. Diese Röhre kann das Signal zu den Synapsen weiterleiten, unter Voraussetzung, dass der Schwellenwert erreicht ist.
 Fall er nicht erreicht werden sollte, wird das Signal abgebrochen. Der Schwellenwert wird erreicht, wenn genug Neurotransmitter vorhanden sind
-WAS ABSOLUT EINFACH DARGSTELLT IST UND EIGENTLICH VERBESSERT WERDEN MUSS, ABER ICH FRAGE ZUR SICHERHEIT NOCHMAL NACH. Sobald das Signal ankommt, werden die Neurotransmitter ausgeschüttet und die Dendriten der anderen verbunden Neuronen nehmen sie auf.
+WAS ABSOLUT EINFACH DARGSTELLT IST UND EIGENTLICH VERBESSERT WERDEN MUSS, ABER ICH FRAGE ZUR SICHERHEIT NOCHMAL NACH. Sobald das Signal ankommt, werden die Neurotransmitter
+ausgeschüttet und die Dendriten der anderen verbunden Neuronen nehmen sie auf.
 Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidung, ob das Signal weitergeleitet werden soll oder abgebrochen wird.
 Es ensteht eine Kettenreaktion.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=350pt, keepaspectratio]{images/neuron}
+    \caption[Aufbau eines Neuron]{Das einzelne Neuron sendet mithilfe der Synapsen Signale an die verbundenen Neuronen, die diese Signale mit den Dendriten aufnehmen.}
+\end{figure}
 Da das menschliche Gehirn imitiert werden soll, werden künstliche Neuronen erschaffen, die einen Wert von den vorherigen künstlichen Neuronen verarbeitet wurden.
 Durch die ganzen Verbindungen zwischen den Neuronen wird das auch als Netzwerk bezeichnet. Viele Eigenschaften der Neuronen werden mitgenommen, wie zum Beispiel die Dendriten, die Synapsen, sowie
 der Schwellenwert, in der Informatik auch Bias genannt. Der Bias spielt im Kapitel \nameref{fcnn} eine Rolle. Unterschied ist aber,
@@ -269,7 +280,7 @@ Das $ b_{i}^{(\alpha,1)} $ in der Gleichung steht für Bias und ist ein weiterer
 für das Weiterleiten der Neuronen. Das Gewicht entscheidet, wie wichtig der Wert vom Neuron ist. Je höher der Wert ist, desto entscheidener
 ist das Neuron. Wichtig ist anzumerken, dass die Gewichte und die Biases verstellbare Parameter sind, die für das Lernen der KI eine wichtige Rolle
 spielt. Damit die KI lernen kann, müssen die Parameter $w$ und $b$ optimal gesetzt werden, sodass die KI richtige Voraussagen treffen kann, um welche Zahl es sich handelt.
-Dafür wird die Fehlerrückführung verwendet. Erstmal werden nur die partielle Ableitungen berechnet. Warum sie gebraucht werden wird im Kapitel \nameref{back} genauer
+Dafür wird die Fehlerzurückführung (Backpropagation) verwendet. Erstmal werden nur die partielle Ableitungen berechnet. Warum sie gebraucht werden wird im Kapitel \nameref{back} genauer
 erläutert. So kann in der Gleichung~\ref{xwithoutfunction} partiell nach drei Variablen der Funktion $C(\vec{y},\vec{x}^{(A,1)})$ abgeleitet werden: $x_{j}^{(\alpha-1,1)}$, $w_{i,j}^{(\alpha,1)}$ und $b_{i}^{(\alpha,1)}$.
 Die Funktion $C(\vec{y},\vec{x}^{(A,1)})$ wird in Kaptiel \nameref{lost} genauer erläutert. Sie kommt in dem Fall direkt vor, da die partiellen Ableitungen
 davor für die einzelnen Kapiteln schon vorgeschrieben sind.???
@@ -293,7 +304,7 @@ nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
     \caption[Lineare Regression und nicht lineare Regression]{Im ersten Graph ist sie gut mit der lineare Regressionen lösbar. Beim zweiten Graph ist es
     unmöglich eine genaue Regression zu bekommen mit einer lineare Regression. Dafür wird eine nicht linieare Regression verwendet.}
 \end{figure}
-Welche Aktivierungsfunktionen verwendet werden kommt in Lektion AKTIVIERUNGSFUNKTION dran. So ergibt sich
+Welche Aktivierungsfunktionen verwendet werden kommt im Kapitel \nameref{activation} dran. So ergibt sich
 \begin{equation}
     x_{i}^{(\alpha,1)} := f^{(\alpha,1)}(\bar{x}_{i}^{(\alpha,1)}) = f^{(\alpha,1)}(\sum_{j=1}^{N_{\alpha}} w_{i,j}^{(\alpha,1)} x_{j}^{(\alpha-1,1)} + b_{i}^{(\alpha,1)}).
 \end{equation}
@@ -306,7 +317,7 @@ Sobald die letzte Schicht erreicht ist, berechnet die Verlustfunktion Fehlermaß
 unsere KI ist. Mehr dazu im Kapitel \nameref{lost}.
 
 
-\subsubsection{Aktivierungsfunktion}
+\subsubsection{Aktivierungsfunktion}\label{activation}
 Mithilfe der Aktivierungsfunktion kann die KI eine nicht lineare Regression durchführen, denn aus der Gleichung~\ref{withfunction} wird deutlich,
 dass alle Operationen linear sind, wenn nur der Paramater der Funktion $f^{(\alpha,1)}(x)$ betrachtet wird. Für eine nicht lineare Regression sollte die
 Aktivierungsfunktion differenzierbar sein. Dafür gibt es verschiedene Formen von Aktivierungsfunktionen, die in der Praxis angewendet werden.
@@ -342,7 +353,7 @@ Die partielle Ableitung nach $\bar{x}_i^{(\alpha,1)}$ zur Funktion $C(\vec{y},\v
 Meistens wird die Aktivierungsfunktion an der letzte Schicht verwendet, denn der Zweck dieser Aktivierungsfunktion ist es mithilfe des Vektors
 $ \vec{x}^{(A)} $ in einen neuen Vektor gleicher Dimension zu erstellen, deren Elemente zusammenaddiert $1$ ergibt. Der Wertebereich der Funktion
 liegt bei $[0;1]$. Dies kann dann in einer Wahrscheinlichkeitsverteilung dargestellt werden. Dies erleichtert die Dokumentierung der Ergebnisse der KI
-und eine Rückschlussführung, warum die KI wahrscheinlich diese Zahl nimmt, ist möglich.
+und eine Rückschlussziehung, warum die KI wahrscheinlich diese Zahl nimmt, ist möglich.
 
 
 \subsection{Feature Extraction}\label{feature}
@@ -394,18 +405,42 @@ Werden diese Eigenschaften hinzugefügt, folgt daraus für die 2D Convolution:
 \begin{equation}
     x_{i,j}^{(\alpha,\beta)} = f^{(\alpha)}(\sum_{\beta'=1}^{N_{\beta}^{(\alpha-1)}} \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i+m'-1,j+n'-1}^{(\alpha-1,\beta')}k_{m',n'}^{(\alpha,\beta')}+b_{i,j}^{(\alpha,\beta)})
 \end{equation}
-Für die Fehlerzurückführung (Backpropagation) werden die partielle Ableitungen nach $k_{i,j}^{(\alpha,\beta)}$, nach $b_{i,j}^{(\alpha,\beta)}$ und nach $x_{i,j}^{(\alpha-1,\beta)}$ zur Funktion $C$ gebraucht:
+Für die Backpropagation werden die partielle Ableitungen nach $k_{i,j}^{(\alpha,\beta)}$, nach $b_{i,j}^{(\alpha,\beta)}$ und nach $x_{i,j}^{(\alpha-1,\beta)}$ zur Funktion $C$ gebraucht:
 \begin{equation}
-    \frac{\partial C}{\partial k_{i,j}^{(\alpha,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}} x_{i+i'-1,j+j'-1}^{(\alpha-1,\beta)} = (X^{(\alpha-1,\beta)} \star \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
+    \frac{\partial C}{\partial k_{i,j}^{(\alpha,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}}
+    x_{i+i'-1,j+j'-1}^{(\alpha-1,\beta)} = (X^{(\alpha-1,\beta)} \star \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
 \end{equation}
 \begin{equation}
     \frac{\partial C}{\partial b_{i,j}^{(\alpha,\beta)}} = \frac{\partial C}{\partial \bar{x}_{i,j}^{(\alpha,\beta)}}
 \end{equation}
 \begin{equation}
-    \frac{\partial C}{\partial x_{i,j}^{(\alpha-1,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}} k_{i-i'+1,j-j'+1}^{(\alpha,\beta)} = (K^{(\alpha,\beta)} \ast \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
+    \frac{\partial C}{\partial x_{i,j}^{(\alpha-1,\beta)}} = \sum_{i'=1}^{m_x^{(\alpha,\beta)}}\sum_{j'=1}^{n_x^{(\alpha,\beta)}} \frac{\partial C}{\partial \bar{x}_{i',j'}^{(\alpha,\beta)}} k_{i-i'+1,j-j'+1}^{(\alpha,\beta)}
+    = (K^{(\alpha,\beta)} \ast \frac{\partial C}{\partial \bar{X}^{(\alpha,\beta)}})_{i,j}
 \end{equation}
 
 \subsubsection{Max-Pooling}
+Diese Operationen wird für das CNN öfters benutzt, denn zum einen reduziert sie Bildgröße um die Häflte und zum anderen behält sie trotzdem wichtige
+Merkmale des Bildes. Das macht das Berechnen nochmal effizienter und die Hauptmerkmale werden herausgestochen. Dies funktioniert, indem eine 2$\times$2 Matrix
+durch die einzelne Regionen des Bildes durchgegangen wird und der höchste Wert von den 4 Pixel ausgewählt wird:
+\begin{equation}
+    x_{i,j}^{(\alpha,\beta)} = \max\{x_{i',j'}^{(\alpha-1,\beta)} \mkern5mu | \mkern5mu i' \in \{i,i+1\}, j' \in \{j,j+1\} \}.
+\end{equation}
+Die neue Dimension beträgt
+\begin{equation}
+    m_{x}^{(\alpha,\beta)} = \bigg\lceil \frac{m_{x}^{(\alpha-1,\beta)}}{2} \bigg\rceil, \mkern5mu
+    n_{x}^{(\alpha,\beta)} = \bigg\lceil \frac{n_{x}^{(\alpha-1,\beta)}}{2} \bigg\rceil.
+\end{equation}
+Bei der Backpropagation ist der Wert der Verlustfunktion nur von den größten Werten der einzelne Regionen abhängig, da nur diese an der nächsten Schicht weitergegeben wurden.
+Die anderen Werte spielen keine Rolle, deswegen ist der Gradient von denen = 0.
+\begin{equation}
+    \frac{\partial C}{\partial x_{i,j}^{(\alpha-1,\beta)}} =
+    \left\{
+    \begin{array}{ll}
+		\frac{\partial C}{\partial \bar{x}_{i,j}^{(\alpha,\beta)}} & \mathrm{falls} \mkern5mu \max\{x_{i',j'}^{(\alpha-1,\beta)} \mkern5mu | \mkern5mu i' \in \{i,i+1\}, j' \in \{j,j+1\} \} \\
+		0 & \mathrm{falls} \mkern9mu \mathrm{Sonstiges}
+	\end{array}
+    \right.
+\end{equation}
 
 \subsubsection{Übergang von Feature Extraction zu Klassifikationsebene}
 Nachdem die Merkmale der Bilder durch 2D Konvolution und Max-Pooling extrahiert wurden, muss diese Matrix zur Klassifikationsebene übertragen werden.
@@ -501,7 +536,14 @@ Feature Extraction oder Aktivierungsfunktion und Verlustfunktion müssen erstell
 Internet anbietet. So müssen nicht die einzelne Elemente der Vektoren ausgerechnet werden, sondern kann alle Elemente des Verktors aufeinmal berechnen.
 Auch muss der Lernprozess programmiert werden, indem das Netzwerk durchläuft. Die Anzahl der Durchläufe des Netzwerkes kann bestimmt werden.
 Diese nennt sich auch Epochen. Am Ende werden verschiedene Diagramme generiert, die für die Analyse der KI nutzlich sein könnten.
-Mehr dazu im Kapitel \nameref{auswertung}.
+Mehr dazu im Kapitel \nameref{auswertung}. Für die Architektur des Netzwerkes wird eine 2D Konvolutionsschicht mit einem Kernel einer Dimension von 3$\times$3, darauffolgend eine Max-Pooling Schicht.
+An der Konvolutionsschicht wird die Aktivierungsfunktion ReLU angehängt. Nach der Max-Pooling Schicht wird das zum Vektor abgeflacht und mit zwei weiteren neuronale Schichten verbaut.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=400pt, keepaspectratio]{images/cnn}
+    \caption[Architektur eines CNNs]{Insgesamt 6 Schichten, wobei die 2D Konvolutionsschicht eine Dimension von 26$\times$26 besitzt mit der Tiefe von 5.
+    Die Anzahl der Ausgabeschicht liegt bei 10, für die einzelnen Ziffern von 0-9.}
+\end{figure}
 
 \subsection{Werkzeuge}
 Für die Umsetzung wird die Programmiersprache Python verwendet, denn Python wird in der Praxis größtenteils für Data Science verwendet.
@@ -534,7 +576,8 @@ Linare Funktion zwischen zwei Neuronenschichten:
 \newpage
 \nolinenumbers{}
 %\section{Literaturverzeichnis} wenn Literaturverzeichnis dabei sein muss in der Gliederung
-{%\renewcommand{\section}[2]{}
+{
+%\renewcommand{\section}[2]{}
 \renewcommand\refname{Literaturverzeichnis}
 \hypersetup{linkcolor=red}
 \renewcommand\UrlFont{\color{black}\normalfont}
