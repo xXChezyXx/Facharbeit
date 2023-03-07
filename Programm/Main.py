@@ -26,9 +26,9 @@ y_test = np_utils.to_categorical(y_test, 10)
 #TODO Sandbox benutzen und rumprobieren. Worst Szenario: Alles selber ausrechnen
 
 network = [
-    Convolutional((1,28,28),3,3),
+    Convolutional((1,28,28),3,5),
     ReLU(),
-    MaxPooling((3,26,26)),
+    MaxPooling((5,26,26)),
     Convolutional((3,13,13),3,9),
     ReLU(),
     MaxPooling((9,11,11)),
