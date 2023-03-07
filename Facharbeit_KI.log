@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  7 MAR 2023 23:35
+This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  8 MAR 2023 00:06
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex
@@ -1250,10 +1250,10 @@ Package luatex.def Info: images/accuracydiagram.png  used on input line 643.
 (luatex.def)             Requested size: 340.0pt x 191.25784pt.
  [17<./images/overfitting.png><./images/accuracydiagram.png>] [18]
 
-LaTeX Warning: Reference `1' on page 19 undefined on input line 669.
+LaTeX Warning: Reference `1' on page 19 undefined on input line 671.
 
 
-LaTeX Warning: Reference `2' on page 19 undefined on input line 674.
+LaTeX Warning: Reference `2' on page 19 undefined on input line 676.
 
 [19] 
 AED: lastpage setting LastPage
@@ -1290,7 +1290,7 @@ Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
 y10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb>
-Output written on Facharbeit_KI.pdf (24 pages, 3247326 bytes).
+Output written on Facharbeit_KI.pdf (24 pages, 3247528 bytes).
 
 PDF statistics: 443 PDF objects out of 1000 (max. 8388607)
  106 named destinations out of 1000 (max. 131072)
