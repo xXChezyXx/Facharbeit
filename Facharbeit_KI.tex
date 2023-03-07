@@ -3,7 +3,10 @@
 % Durchlesen und schauen, was man verbessern kann
 % Sprache fixxen (Freunde fragen, schauen ob Füllwörter drinne sind usw.)
 % Quellen einfügen
-% Schluss, Auswertung zu Ende schreiben
+% Schluss
+% Motivation ergänzen
+% Mehrschichtiges/Maschinelles Lernen groß oder klein?
+% Ab "Voraussetzung für mehrschichtiges Lernen" weiter Duden nutzen
 
 \documentclass[11pt]{article}
 \usepackage{geometry}
@@ -29,6 +32,11 @@
 \usepackage[format=plain,labelfont={bf,it},textfont=it]{caption}
 \usepackage{fancyhdr}
 \usepackage[no-math]{fontspec}
+
+% Für keine Abbildungen
+%\usepackage{comment}
+%\excludecomment{figure}
+%\let\endfigure\relax
 
 \hypersetup{
     colorlinks=true,
@@ -131,6 +139,7 @@
 \acro{Underfitting}{Unteranpassung}
 \acro{Accuracy}{Genauigkeit}
 \acro{Cross Correlation}{Kreuzkorrelation}
+\acro{SGD}{Stochastisches Gradientenverfahren}
 \end{acronym}
 \newpage
 
@@ -142,43 +151,43 @@
 
 \section{Einleitung}
 Das menschliche Gehirn wird von vielen nicht richtig verstanden. Wird Abbildung 1 angeschaut, dann erkennt der Beobachter die Zahl 74290,
-was leicht zu erkennen ist. Wenn aber der Vorgang versucht wird zu erklären, so wird es klar, dass es nicht ganz einfach ist
+was leicht zu bestimmen ist. Wenn aber der Vorgang versucht wird zu erklären, so wird es klar, dass es nicht ganz einfach ist
 und dass es absolut komplex werden kann.
 \begin{figure}[h]
     \centering
     \includegraphics[width=300pt, keepaspectratio]{images/zahlen}
     \caption[Handgeschriebene]{Erkennbar ist die handgeschriebene Zahl 74290.}
 \end{figure}
-Eine Problemstellung ensteht, wie handgeschriebene Zahlen erkannt werden können.
+Eine Problemstellung entsteht, wie handgeschriebene Zahlen erkannt werden können.
 Dieses Thema ist von besonderem Interesse, weil das Verständnis zur Funktionsweise eines menschlichen Gehirns zum Teil vertieft werden kann.
-Außerdem wird die Funktionsweise eines Textscanners verstanden, was im Alltag von den meisten unbewusst benutzt wird.
+Außerdem wird die Machenismus eines Textscanners verstanden, was im Alltag von den meisten unbewusst benutzt wird.
 Viele Forscher versuchten deshalb in der Vergangenheit nach Problemlösungen zu suchen. Ein Ansatz wäre das Herausfinden
-der Strukturen der einzelne Zahlen und damit die Unterscheidungen zwischen den Zahlen.
+der Strukturen der einzelnen Zahlen und damit die Unterscheidungen zwischen den Zahlen.
 Doch jedes Merkmal einer Zahl selber herauszufinden und dann speziell für jede Zahl das zu programmieren kann
 anstrengend sein und lange dauern. Mithilfe einer Künstlichen Intelligenz (KI) kann die Erkennung von handgeschriebenen Zahlen ermöglicht werden. 
 Schon heute werden KI-Systeme in unseren Alltag integriert, wie zum Beispiel Textübersetzer oder Gesichtserkennung im Smartphone. Da die KI solche
-komplexe Strukuren erkennen kann, was ein Mensch vielleicht nicht erkennt, wird die Facharbeit für die Erkennung der handgeschriebenen Zahlen eine KI programmieren. 
-Ziel der Facharbeit ist es eine KI zu programmieren, die handgeschriebene Zahlen mit einer Wahrscheinlichkeit von mindestens 97\% erkennen zu können.
-Auch soll die Möglichkeit bestehen eigene handgeschriebene Zahlen von der KI testen zu lassen. Um dies umsetzen zu können, wird der Begriff KI definiert und
-auch verschiedene Arten von KIs, welche Funktion jede einzelne Art besitzt, erläutert. Die angewendete Lernmethode wird genauer erläutert.
-Danach wird in Kapitel 3 über mehrschichtiges Lernen erläutert und Voraussetzungen für diese Methodik genannt. Im Anschluss wird in Kapitel 4
-der Aufbau eines faltendes neuronales Netzwerk dargestellt und die Funktionsweise mathematisch erläutert. Dabei wird darauf eingegangen, wie eine KI
+komplexe Strukturen erkennen kann, was ein Mensch vielleicht nicht erkennt, wird die Facharbeit für die Erkennung der handgeschriebenen Zahlen eine KI programmieren. 
+Ziel der Facharbeit ist es, eine KI zu programmieren, die handgeschriebene Zahlen mit einer Wahrscheinlichkeit von mindestens 97\% bestimmen zu können.
+Auch soll die Möglichkeit bestehen, eigene handgeschriebene Zahlen von der KI testen zu lassen. Um dies umsetzen zu können, wird der Begriff KI definiert und
+verschiedene Arten von KIs, welche Funktion jede einzelne Art besitzt, auseinandergesetzt. Die angewendete Lernmethode wird genauer erläutert.
+Danach wird in Kapitel 3 über mehrschichtiges Lernen erklärt und Voraussetzungen für diese Methodik genannt. Im Anschluss wird in Kapitel 4
+der Aufbau eines faltendes neuronales Netzwerkes dargestellt und die Funktionsweise mathematisch näher gebracht. Dabei wird darauf eingegangen, wie eine KI
 lernt und wie sie bestimmte Merkmale der Zahlen erkennen kann mithilfe von 2D Konvolution. Der Begriff Merkmal wird auch in dem Kapitel erläutert.
 Mithilfe der Theorie wird dann in Kapitel 5 die KI umgesetzt und programmiert. Dabei wird sie ausgewertet für analysiert, worauf bei der Lernphase
 geachtet werden muss. Dies kann durch die Analyse optimiert werden. Zum Schluss wird angeschaut, ob das Ziel der Facharbeit erreicht wurde und welche
-Verbesserungsvorschlägen eingefügt werden können, damit die KI eine höhere Wahrscheinlichkeit hat die Zahl richtig vorherzusagen.
+Verbesserungsvorschlägen eingefügt werden können, damit die KI eine höhere Wahrscheinlichkeit hat, die Zahl richtig vorherzusagen.
 %Gesellschaft.\label{1} Es gibt viele~\cite{useofki}
 
 
 \section{Künstliche Intelligenz}
-Der Begriff Künstliche Intelligenz (KI) ist sehr schwer definierbar, denn es mangelt an der Defintion des Begriffs Intelligenz.
+Der Begriff Künstliche Intelligenz (KI) ist sehr schwer definierbar, denn es mangelt an der Definition der Bezeichnung Intelligenz.
 Allgemein kann die KI definiert werden als der Versuch, bestimmte Entscheidungsstrukturen von Menschen nachzubilden mithilfe von
 Algorithmen. Manche Experten behaupten aber auch, dass eine KI nicht gleich eine KI ist, sondern sie in zwei Bereiche unterteilt werden kann.
-Dabei wird die KI zwsichen einer starke KI und einer schwache KI unterschieden. Schwache KIs sind nur in bestimmten Teilbereichen in der Lage
+Dabei wird die KI zwischen einer starke KI und einer schwache KI unterschieden. Schwache KIs sind nur in bestimmten Teilbereichen in der Lage,
 an die menschliche Intelligenz heranzukommen. Doch sie ist nicht anpassungsfähig. Das bedeutet, dass eine schwache KI, die zum Beispiel auf Schach
-spezialisiert wird, nur die Intelligenz im Bereich Schach besitzt. Selbstständiges fahren ist mit der KI nicht möglich. Dafür muss eine
-andere KI spezialisiert werden, damit sie selbstständig fahren kann. Dagegen kann eine starke KI sich an derzeitigen Situatinen anpassen. Diese nennen sich auch Superintelligenz.
-Solche starke KIs sind heutzutage noch nicht umsetzbar und es wird immer noch daran geforscht.
+spezialisiert wird, nur die Intelligenz im Bereich Schach besitzt. Selbstständiges Fahren ist mit der KI nicht möglich. Dafür muss eine
+andere KI spezialisiert werden, damit sie selbstständig fahren kann. Dagegen kann eine starke KI sich an derzeitigen Situationen anpassen. Diese nennen sich auch Superintelligenz.
+Solche starke KIs sind heutzutage noch nicht umsetzbar und es wird schließlich daran geforscht.
 Die schwache KI, die in der Facharbeit speziell zur Erkennung von handgeschriebenen Zahlen programmiert wird, können in 2 Teilbereichen
 unterteilt werden.
 \begin{figure}[h]
@@ -187,12 +196,12 @@ unterteilt werden.
     \caption[Unterkategorien der Künstliche Intelligenz]{Die KI besitzt 2 Unterkategorien, Maschinelles Lernen und Mehrschichtiges Lernen.}
 \end{figure}
 Eine Unterkategorie der KI wäre der Bereich Maschinelles Lernen. Maschinelles Lernen versucht mithilfe von Algorithmen mit einer großen Anzahl von
-Daten ein Muster zu erkennen. Dazu werden die aus Daten gewonnen Erkenntnisse für Problemlösung verwendet oder der Algorithmus wird auf
+Daten ein Muster zu erkennen. Dazu werden die aus der Datens gewonnene Erkenntnisse für Problemlösung verwendet oder der Algorithmus wird auf
 die Daten zugeschnitten und verallgemeinert.
 Der zweite Teilbereich wäre mehrschichtiges Lernen, das sehr an maschinelles Lernen ähnelt. Der Unterschied liegt aber an der Art und Weise, wie
 sie mit den Daten arbeitet. Mehrschichtiges Lernen versucht das menschliche Gehirn zu imitieren durch ein künstliches Neuronales Netzwerk.
-Durch das Imitieren sind die Strukturen vom mehrschichtigen Lernen deutlich komplexer als die vom maschinellen Lernen. Deswegen sind
-sehr große Datensätzen von Vorteil für mehrschichtiges Lernen, da deutlich mehr Merkmale der Daten erkannt werden. Darauf basiert sich die KI
+Durch das Imitieren sind die Strukturen vom mehrschichtigen Lernen merklich komplexer als die vom maschinellen Lernen. Deswegen sind
+sehr große Datensätze von Vorteil für mehrschichtiges Lernen, da deutlich mehr Merkmale der Daten erkannt werden. Darauf basiert sich die KI
 in der Facharbeit.
 \subsection{Überwachtes Lernen}
 Überwachtes Lernen ist eine Methode, wie die KI mit Daten lernen kann. Dazu hat die Datei 2 wichtige Merkmale, nämlich die Eingabe und die
@@ -205,9 +214,9 @@ die Antwort, die die KI ausgegeben hat, übereinstimmt.
     ausgegeben wird, werden die Ausgaben vergliechen.}
 \end{figure}
 Falls sie nicht übereinstimmt, lernt die KI aus den Fehlern und verbessert sich
-dadurch. Überwachtes Lernen ist eine angemessene Methode für das Problem der Facharbeit, da die Antwort, die die KI ausgibt, übereinstimmen muss.
+dadurch. Überwachtes Lernen ist eine angemessene Methode für das Problem der Facharbeit, da die Antwort, die die KI ausgibt, sich mit der richtigen Antwort decken muss.
 Dadurch wird die Fehlerquote der KI möglichst kleingehalten, sodass eine genaue Erkennung der handgeschrieben Zahlen gelingen kann.
-Dabei ist anzumerken, dass die KI zwei Arten von Lösungen angeben kann. In dem Fall wird die sogenannte Klassifikation als Lösungsart aktzeptiert.
+Dabei ist anzumerken, dass die KI zwei Arten von Lösungen angeben kann. In dem Fall wird die sogenannte Klassifikation als Lösungsart akzeptiert.
 Jede Zahl wird als eine eigene Klasse zugeordnet. Die KI gibt aus, um welche Klasse es sich handelt.
 
 \section{Voraussetzung für mehrschichtiges Lernen}
@@ -540,7 +549,7 @@ Trotz des Algorithmus kann die Berechnung immer noch nicht effizient genug sein,
 Beispiel der Datensatz von MNIST verwendet wird, dann müssen für alle 70000 Bilder die Gradienten berechnet werden. Diese Zeit kann erspart werden,
 indem nicht für alle Bilder den Gradient berechnen werden müssen. Als Beispiel soll nur der Gradient berechnet werden bei jedes 100. Bild. So werden die Gradienten statt
 für 70000 Bilder, nur 700 Bilder berechnet. Die Antastung des Minimums ist nicht sehr präzise, aber dennoch aussagekräftig und zeitsparend. Die
-Optimierung nennt sich Stochastisches Gradientenverfahren.
+Optimierung nennt sich Stochastisches Gradientenverfahren (SGD).
 \subsubsection{Backpropagation}\label{back}
 Um die Parameter zu aktualisieren muss der Wert $\frac{\partial C}{\partial w_{i}}$ berechnet werden. Mithilfe der Backpropagation kann dieser Wert
 berechnet werden, indem rückwärts gegangen wird vom FNN.\@ Als Beispiel wird ein FNN dargestellt mit drei Schichten. Für die Verlustfunktion soll der
@@ -572,14 +581,16 @@ Feature Extraction oder Aktivierungsfunktion und Verlustfunktion müssen erstell
 Internet anbietet. So müssen nicht die einzelne Elemente der Vektoren ausgerechnet werden, sondern kann alle Elemente des Verktors aufeinmal berechnen.
 Auch muss der Lernprozess programmiert werden, indem das Netzwerk durchläuft. Die Anzahl der Durchläufe des Netzwerkes kann bestimmt werden.
 Diese nennt sich auch Epochen. Am Ende werden verschiedene Diagramme generiert, die für die Analyse der KI nutzlich sein könnten.
-Mehr dazu im Kapitel \nameref{auswertung}. Für die Architektur des Netzwerkes wird eine 2D Konvolutionsschicht mit einem Kernel einer Dimension von 3$\times$3, darauffolgend eine Max-Pooling Schicht.
-An der Konvolutionsschicht wird die Aktivierungsfunktion ReLU angehängt. Nach der Max-Pooling Schicht wird das zum Vektor abgeflacht und mit zwei weiteren neuronale Schichten verbaut.
+Mehr dazu im Kapitel \nameref{auswertung}. Für die Architektur des Netzwerkes werden mehrere 2D Konvolutionsschichten, sowie Max Pooling Schichten angesetzt.
+Der Aufbau ist gut im Abbild 12 zu erkennen.
 \begin{figure}[h]
     \centering
     \includegraphics[width=400pt, keepaspectratio]{images/cnn}
-    \caption[Architektur eines CNNs]{Insgesamt 6 Schichten, wobei die 2D Konvolutionsschicht eine Dimension von 26$\times$26 besitzt mit der Tiefe von 5.
+    \caption[Architektur eines CNNs]{Insgesamt 8 Schichten mit gestapelten Operationen, wie die 2D Konvolution, oder der Max Pooling.
     Die Anzahl der Ausgabeschicht liegt bei 10, für die einzelnen Ziffern von 0-9.}
 \end{figure}
+Nach der Max-Pooling Schicht wird das zum Vektor abgeflacht und mit zwei weiteren neuronale Schichten verbaut.
+Mit dem Netzwerk wird die Facharbeit die KI trainieren.
 
 \subsection{Werkzeuge}
 Für die Umsetzung wird die Programmiersprache Python verwendet, denn Python wird in der Praxis größtenteils für Data Science verwendet.
@@ -589,23 +600,58 @@ bietet sie sehr viele Operationen an, die für die KI notwendig sind. Der Matplo
 Feature Extraction zuständig. Sie hilft den Nutzer die KI besser zu verstehen und nachzuvollziehen.
 
 \subsection{Trainingsphase}
-- Daten müssen in 3 Sets aufgeteilt werden: Training, Test und Validation
-- Irgendwo muss noch Overfitting und Underfitting rein, das mit Validation vermieden wird
+Bevor der Ablauf in der Trainingsphase erklärt wird, wird der Datensatz in 3 Teilen aufgespalten: Die Trainingsdaten, die Validierungsdaten
+und die Testdaten. Das Verhältnis der Verteilung kann unterschiedlich sein. Meistens sind sie in 50/30/20 aufgeteilt.
+Für die Trainingsphase wird erstmal nur die Trainingsdaten und die Validierungsdaten verwendet.
+Bevor die Trainingsphase gestartet wird, werden für alle verstellbare Parameter $w$, $b$ und $k$ zufällige Werte gegeben über
+die Gauß-Verteilung. Zuerst wird ein zufälliges erstes Bild aus den Trainingsdaten in die Eingabeschicht weitergeleitet.
+Bis zur Ausgabeschicht berechnet die KI die entsprechende Vorhersage. Mit der Vorhersage wird die Fehlerabweichung mit dem richtigen
+Ergebnis mithilfe der Verlustfunktion berechnet. Die Parameter werden dann durch den SGD optimiert mithilfe von Backpropagation.
+Danach wird das nächstes zufälliges Bild ausgewählt und die Schritte werden wiederholt. Dies gilt solange, bis der alle Bilder aus
+den Trainingsdaten einmal vorgekommen sind. Zuletzt werden die Bilder aus den Validierungsdaten
+in die Eingabeschicht weitergeleitet und die KI soll die Zahl vorhersagen. Der Unterschied ist aber, dass die Parameter nicht optimiert werden
+und dass sozusagen die KI nur getestet wird. Die erste Epoche endet somit und die zweite Epoche beginnt. Sie wiederholt die oben genannten Schritte,
+wie in der ersten Epoche. Der Vorteil ist aber, dass sie mit den verbesserten Parameter weiterrechnet. Die Anzahl der Epochen, die durchgangen
+werden sollen kann selber bestimmt werden. Für die Facharbeit wurde die Epoche auf 200 gesetzt. Am Ende der Trainingsphase wird ein Diagramm
+angezeigt, die für den Kapitel Auswertung eine wichtige Rolle spielen.
 
 \subsection{Auswertung}\label{auswertung}
-- Seite 14
-- Verschiedene Diagramme werden ausgewertet
-- Z.B. Lernverlauf
-- Accuracy anschauen
-- Wert der Verlustfunktion im Verlauf anschauen
-\subsubsection{Trainingsdaten}
-\subsubsection{Validationsdaten}
-\subsubsection{Testdaten}
-
+Manchmal kann bei schlecht ausgewählte Strukur des Netzwerkes die Vorhersehbarkeit der KI beeinträchtigen.
+Dafür werden zwei neue Begriffe definiert: Überfittung (Overfitting) und Unterfittung (Underfitting).
+Als Beispiel werden 3 verschiedene Regressionen verwendet:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=330pt, keepaspectratio]{images/overfitting}
+    \caption[Overfitting und Underfitting]{Die Regressionen werden als Beispiel mit Overfitting und Underfitting dargestellt.}
+\end{figure}
+Von den 3 Regressionen ist die erste Regression gut gewählt, denn sie verläuft nicht allzu perfekt in den Punkten. Trotzdem sind die
+Abweichungen gering. Bei der zweite Regression wird Overfitting erkannt, denn sie verläuft zu perfekt in den Punkten, doch wenn
+ein neuer unbekannter Punkte eingefügt wird, dann kann die Regression zu falsche Ergebnisse führen. Das Gegenteil davon ist Underfitting
+bei der dritten Regression. Hier wird deutlich gezeigt, dass die Abweichungen zu hoch sind, weil die Regression linear ist.
+Dies kann mit der Trainingsphase bei der KI übertragen werden, denn die KI soll sich nicht zu sehr auf die Trainingsdaten gewöhnen,
+sondern auch von unbekannten Daten gut vorhersagen. Deswegen spielen die Validierungsdaten eine wichtige Rolle, um gegen Overfitting
+und Underfitting vorzugehen. Um zu sagen, wie gut eine KI vorhersagen kann werden sogenannte Metriken verwendet. Metriken sind Bewertungskriterien für die KI,
+wie gut sie vorhersagen kann. Eine, die für die Facharbeit genommen wird ist die Genauigkeit (Accuracy). Sie lässt sich folgendermaßen
+berechnen:
+\begin{equation}
+    \frac{\text{Anzahl der richtig vorhergesagten Bildern}}{\text{Anzahl der Gesamtbildern}}
+\end{equation}
+Das Diagramm, das in Kapitel Trainingsphase erwähnt wurde, ist ein Epoche-Accuracy Diagramm und sieht folgendermaßen aus nachdem die Trainingsphase
+beendet wurde:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=340pt, keepaspectratio]{images/accuracydiagram}
+    \caption[Epoche-Accuracy Diagramm]{Epoche-Accuracy Diagramm mit den Werten der Testdaten und der Validierungsdaten. Der Abstand vergrößert sich,
+    die KI fängt an zu überfitten.}
+\end{figure}
+Hier ist gut zu sehen, dass während die Accuracy der Trainingsdaten nach oben steigt die Validierungsdaten der KI konstant bleibt. Die Abstand zwischen den
+beiden Werten nimmt zu. Dies deutet auf Overfitting hin und kann durch früheres aufhören verhindert werden. Für diesen Fall reichen
+75 Epochen. Zum Schluss werden die Testdaten auch in das Netzwerk reingeschickt und versucht vorherzusagen. Unterschied zwischen den Validierungsdaten
+und Testdaten ist, dass die Testdaten noch keinen Kontakt mit der KI hatten, sodass die KI getestet werden kann.
+Nach der Durchführung liegt der Accuracy Wert der Testdaten bei 98,17\%.
 
 \section{Schlussfolgerung}
-- Seite 19
-Paar Formeln, wobei gilt:
+
 
 \newpage
 \nolinenumbers{}

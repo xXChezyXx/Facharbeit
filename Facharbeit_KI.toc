@@ -1,24 +1,21 @@
-\contentsline {section}{\numberline {1}Einleitung}{4}{section.1}%
-\contentsline {section}{\numberline {2}Künstliche Intelligenz}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Überwachtes Lernen}{5}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Voraussetzung für mehrschichtiges Lernen}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Datensatz}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Künstliches neuronales Netzwerk}{6}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Konvolutionales neuronales Netzwerk}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Klassifikationsebene}{8}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Aktivierungsfunktion}{10}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Feature Extraction}{11}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}2D Konvolution}{12}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Max-Pooling}{13}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Übergang von Feature Extraction zu Klassifikationsebene}{13}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Verlustfunktion}{14}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Optimierung}{14}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Backpropagation}{16}{subsubsection.4.4.1}%
-\contentsline {section}{\numberline {5}Umsetzung}{16}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Werkzeuge}{17}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Trainingsphase}{17}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Auswertung}{17}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Trainingsdaten}{18}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Validationsdaten}{18}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Testdaten}{18}{subsubsection.5.3.3}%
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{\numberline {2}Künstliche Intelligenz}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Überwachtes Lernen}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Voraussetzung für mehrschichtiges Lernen}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datensatz}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Künstliches neuronales Netzwerk}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Konvolutionales neuronales Netzwerk}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Klassifikationsebene}{6}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Aktivierungsfunktion}{8}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Feature Extraction}{9}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}2D Konvolution}{10}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Max-Pooling}{11}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Übergang von Feature Extraction zu Klassifikationsebene}{11}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Verlustfunktion}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Optimierung}{12}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Backpropagation}{14}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {5}Umsetzung}{15}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Werkzeuge}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Trainingsphase}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Auswertung}{16}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Schlussfolgerung}{18}{section.6}%
