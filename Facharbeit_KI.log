@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  8 MAR 2023 00:06
+This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  8 MAR 2023 18:21
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex
@@ -1156,46 +1156,46 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 File: images/zahlen.png Graphic file (type png)
 <use images/zahlen.png>
 Package luatex.def Info: images/zahlen.png  used on input line 158.
-(luatex.def)             Requested size: 300.0pt x 168.75645pt.
+(luatex.def)             Requested size: 230.0pt x 129.37505pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1<./images/zahlen.png>]
 <images/ki_kategorie.png, id=171, 462.528pt x 260.172pt>
 File: images/ki_kategorie.png Graphic file (type png)
 <use images/ki_kategorie.png>
-Package luatex.def Info: images/ki_kategorie.png  used on input line 195.
-(luatex.def)             Requested size: 300.0pt x 168.75645pt.
+Package luatex.def Info: images/ki_kategorie.png  used on input line 199.
+(luatex.def)             Requested size: 250.0pt x 140.62575pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
 [2<./images/ki_kategorie.png>]
 <images/slearning.png, id=176, 462.528pt x 260.172pt>
 File: images/slearning.png Graphic file (type png)
 <use images/slearning.png>
-Package luatex.def Info: images/slearning.png  used on input line 212.
+Package luatex.def Info: images/slearning.png  used on input line 216.
+(luatex.def)             Requested size: 300.0pt x 168.75645pt.
+<images/number.png, id=178, 462.528pt x 260.172pt>
+File: images/number.png Graphic file (type png)
+<use images/number.png>
+Package luatex.def Info: images/number.png  used on input line 242.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
 [3<./images/slearning.png>]
-<images/number.png, id=185, 462.528pt x 260.172pt>
-File: images/number.png Graphic file (type png)
-<use images/number.png>
-Package luatex.def Info: images/number.png  used on input line 238.
-(luatex.def)             Requested size: 300.0pt x 168.75645pt.
 <images/neuron.png, id=186, 462.528pt x 260.172pt>
 File: images/neuron.png Graphic file (type png)
 <use images/neuron.png>
-Package luatex.def Info: images/neuron.png  used on input line 257.
+Package luatex.def Info: images/neuron.png  used on input line 261.
 (luatex.def)             Requested size: 350.0pt x 196.8832pt.
 <images/neural_network.png, id=188, 462.528pt x 260.172pt>
 File: images/neural_network.png Graphic file (type png)
 <use images/neural_network.png>
-Package luatex.def Info: images/neural_network.png  used on input line 267.
+Package luatex.def Info: images/neural_network.png  used on input line 271.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
  [4<./images/number.png>] [5<./images/neuron.png><./images/neural_network.png>]
 <images/verbindung.png, id=206, 462.528pt x 260.172pt>
 File: images/verbindung.png Graphic file (type png)
 <use images/verbindung.png>
-Package luatex.def Info: images/verbindung.png  used on input line 297.
+Package luatex.def Info: images/verbindung.png  used on input line 301.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
 
 
@@ -1205,59 +1205,74 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <images/regression.png, id=226, 462.528pt x 260.172pt>
 File: images/regression.png Graphic file (type png)
 <use images/regression.png>
-Package luatex.def Info: images/regression.png  used on input line 328.
+Package luatex.def Info: images/regression.png  used on input line 332.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
- [7<./images/verbindung.png><./images/regression.png>] [8]
-<images/filter.png, id=253, 462.528pt x 260.172pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7<./images/verbindung.png>] [8<./images/regression.png>]
+<images/filter.png, id=252, 462.528pt x 260.172pt>
 File: images/filter.png Graphic file (type png)
 <use images/filter.png>
-Package luatex.def Info: images/filter.png  used on input line 390.
+Package luatex.def Info: images/filter.png  used on input line 393.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
  [9<./images/filter.png>] [10] [11] [12]
 <images/lrate.png, id=297, 462.528pt x 260.172pt>
 File: images/lrate.png Graphic file (type png)
 <use images/lrate.png>
-Package luatex.def Info: images/lrate.png  used on input line 545.
+Package luatex.def Info: images/lrate.png  used on input line 548.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
- [13<./images/lrate.png>]
-<images/beispiel.png, id=308, 462.528pt x 260.172pt>
-File: images/beispiel.png Graphic file (type png)
-<use images/beispiel.png>
-Package luatex.def Info: images/beispiel.png  used on input line 559.
-(luatex.def)             Requested size: 400.0pt x 225.00993pt.
- [14<./images/beispiel.png>]
-<images/cnn.png, id=319, 462.528pt x 260.172pt>
-File: images/cnn.png Graphic file (type png)
-<use images/cnn.png>
-Package luatex.def Info: images/cnn.png  used on input line 588.
-(luatex.def)             Requested size: 400.0pt x 225.00993pt.
-
-[15<./images/cnn.png>]
-<images/overfitting.png, id=326, 462.528pt x 260.172pt>
-File: images/overfitting.png Graphic file (type png)
-<use images/overfitting.png>
-Package luatex.def Info: images/overfitting.png  used on input line 624.
-(luatex.def)             Requested size: 330.0pt x 185.63249pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16]
-<images/accuracydiagram.png, id=331, 462.528pt x 260.172pt>
+<images/beispiel.png, id=298, 462.528pt x 260.172pt>
+File: images/beispiel.png Graphic file (type png)
+<use images/beispiel.png>
+Package luatex.def Info: images/beispiel.png  used on input line 562.
+(luatex.def)             Requested size: 400.0pt x 225.00993pt.
+[13] [14<./images/lrate.png><./images/beispiel.png>]
+<images/cnn.png, id=316, 462.528pt x 260.172pt>
+File: images/cnn.png Graphic file (type png)
+<use images/cnn.png>
+Package luatex.def Info: images/cnn.png  used on input line 591.
+(luatex.def)             Requested size: 400.0pt x 225.00993pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15]
+<images/overfitting.png, id=324, 462.528pt x 260.172pt>
+File: images/overfitting.png Graphic file (type png)
+<use images/overfitting.png>
+Package luatex.def Info: images/overfitting.png  used on input line 627.
+(luatex.def)             Requested size: 330.0pt x 185.63249pt.
+ [16<./images/cnn.png>]
+<images/accuracydiagram.png, id=330, 462.528pt x 260.172pt>
 File: images/accuracydiagram.png Graphic file (type png)
 <use images/accuracydiagram.png>
-Package luatex.def Info: images/accuracydiagram.png  used on input line 643.
+Package luatex.def Info: images/accuracydiagram.png  used on input line 646.
 (luatex.def)             Requested size: 340.0pt x 191.25784pt.
- [17<./images/overfitting.png><./images/accuracydiagram.png>] [18]
-
-LaTeX Warning: Reference `1' on page 19 undefined on input line 671.
 
 
-LaTeX Warning: Reference `2' on page 19 undefined on input line 676.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--675
+
+ []
+
+[17<./images/overfitting.png>] [18<./images/accuracydiagram.png>] [19]
+
+LaTeX Warning: Reference `1' on page 20 undefined on input line 689.
+
+
+LaTeX Warning: Reference `2' on page 20 undefined on input line 694.
+
+[20] 
 AED: lastpage setting LastPage
-[20] (./Facharbeit_KI.aux)
+[21] (./Facharbeit_KI.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1266,15 +1281,15 @@ Package rerunfilecheck Info: File `Facharbeit_KI.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 31379 strings out of 478382
+ 31382 strings out of 478382
  125240,1977958 words of node,token memory allocated
  948 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
 rn, 3 glyph, 90 attribute, 58 glue_spec, 90 attribute_list, 3 write, 7 pdf_actio
 n nodes
-   avail lists: 1:1,2:794,3:858,4:228,5:469,6:71,7:7863,8:208,9:842,10:21,11:497
+   avail lists: 1:1,2:904,3:858,4:224,5:554,6:71,7:7909,8:208,9:917,10:23,11:537
 
- 50051 multiletter control sequences out of 65536+600000
+ 50053 multiletter control sequences out of 65536+600000
  55 fonts using 17232303 bytes
  99i,12n,115p,1051b,500s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/WINDOWS/Fonts/arialnbi.ttf><C:/WINDOWS/Fonts/arialni.ttf><C:/WINDOWS/Fonts/a
@@ -1290,9 +1305,9 @@ Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
 y10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb>
-Output written on Facharbeit_KI.pdf (24 pages, 3247528 bytes).
+Output written on Facharbeit_KI.pdf (25 pages, 3251328 bytes).
 
-PDF statistics: 443 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 131072)
+PDF statistics: 446 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 131072)
  184 words of extra memory for PDF output out of 10000 (max. 100000000)
 

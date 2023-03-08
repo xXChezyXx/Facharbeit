@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1678230400 "c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex" "Facharbeit_KI.pdf" "Facharbeit_KI" 1678230404 0
+["lualatex"] 1678296102 "c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex" "Facharbeit_KI.pdf" "Facharbeit_KI" 1678296106 0
   "C:/Users/Leon/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1678226111 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/Leon/AppData/Local/MiKTeX/luatex-cache/generic/fonts/otl/arial.luc" 1674421233 688280 c8b07aec3bb58896439905f59ac5ffa2 ""
   "C:/Users/Leon/AppData/Local/MiKTeX/luatex-cache/generic/fonts/otl/arialbd.luc" 1674421233 683807 141545ec0bb73f5df8c95c58365d334c ""
@@ -250,12 +250,12 @@
   "C:/WINDOWS/Fonts/arialbd.ttf" 1651897158 990208 d56a45566aa6da62f9c1a2df8dbd5f9d ""
   "C:/WINDOWS/Fonts/arialnbi.ttf" 1672401138 180084 288ba9327f3ea21f505cfc19cea09556 ""
   "C:/WINDOWS/Fonts/arialni.ttf" 1672401138 181124 99d34de59688293fab6c3d191df41fa6 ""
-  "Facharbeit_KI.aux" 1678230404 13257 e58f16366897f11c30c89c2e1a6a14e9 "lualatex"
-  "Facharbeit_KI.lof" 1678230404 1510 ad90d159b294336565ab0ade42c6e554 "lualatex"
-  "Facharbeit_KI.out" 1678230404 3227 f2752fc611e7cbac8291561ce224c75a "lualatex"
-  "Facharbeit_KI.tex" 1678230396 51488 bf178c4e03a87ba0bb71bd9b1b38d15b ""
-  "Facharbeit_KI.toc" 1678230404 1794 645f5143a5562e9475ceb2380b8d9aad "lualatex"
-  "c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex" 1678230396 51488 bf178c4e03a87ba0bb71bd9b1b38d15b ""
+  "Facharbeit_KI.aux" 1678296106 13716 f0ff44de238cc1007cc61cd4e13b03e4 "lualatex"
+  "Facharbeit_KI.lof" 1678296106 1510 437164545c92b04da67ab0754d7b492b "lualatex"
+  "Facharbeit_KI.out" 1678296106 3227 f2752fc611e7cbac8291561ce224c75a "lualatex"
+  "Facharbeit_KI.tex" 1678296102 54200 8c962a44168af32f2922f2b5f419e07e ""
+  "Facharbeit_KI.toc" 1678296106 1794 c1fc9b8b470706d4df0b8d9fd773ec65 "lualatex"
+  "c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex" 1678296102 54200 8c962a44168af32f2922f2b5f419e07e ""
   "images/accuracydiagram.png" 1678225437 82047 83dc2893ed5d161f150582251af063ab ""
   "images/beispiel.png" 1678116944 167976 b08b02f18b8fcd6cb61ae14627cf028c ""
   "images/cnn.png" 1678220371 166569 d783985376527c9408b49001b40851c8 ""
