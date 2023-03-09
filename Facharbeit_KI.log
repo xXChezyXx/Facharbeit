@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  8 MAR 2023 18:21
+This is LuaHBTeX, Version 1.15.1 (MiKTeX 22.10) (format=lualatex 2023.1.22)  9 MAR 2023 01:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/Leon/Documents/Abitur/Facharbeit/Facharbeit_KI.tex
@@ -934,8 +934,8 @@ eX
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 (C:/Users/Leon/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.cfg)))
-Package hyperref Info: Option `colorlinks' set `true' on input line 48.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 48.
+Package hyperref Info: Option `colorlinks' set `true' on input line 42.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 42.
 luaotfload | cache : Lookup cache loaded from C:/Users/Leon/AppData/Local/MiKTeX
 /luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 luaotfload | aux : font no 25 (nil) does not define feature smcp for script latn
@@ -970,32 +970,32 @@ mcp;"
 (./Facharbeit_KI.aux)
 \openout1 = Facharbeit_KI.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
-8.
+2.
 
 (C:/Users/Leon/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1033,19 +1033,19 @@ LaTeX Font Info:    ... okay on input line 58.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 58.
-LaTeX Info: Redefining \microtypecontext on input line 58.
-Package microtype Info: Applying patch `item' on input line 58.
-Package microtype Info: Applying patch `toc' on input line 58.
-Package microtype Info: Applying patch `eqnum' on input line 58.
-Package microtype Info: Applying patch `footnote' on input line 58.
+(lastpage)             ! on input line 52.
+LaTeX Info: Redefining \microtypecontext on input line 52.
+Package microtype Info: Applying patch `item' on input line 52.
+Package microtype Info: Applying patch `toc' on input line 52.
+Package microtype Info: Applying patch `eqnum' on input line 52.
+Package microtype Info: Applying patch `footnote' on input line 52.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 58.
+LaTeX Info: Redefining \showhyphens on input line 52.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1053,7 +1053,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Arial' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 58.
+Package hyperref Info: Link coloring ON on input line 52.
 (./Facharbeit_KI.out) (./Facharbeit_KI.out)
 \@outlinefile=\write4
 
@@ -1101,7 +1101,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 <images/sghm.png, id=90, 120.45pt x 120.45pt>
 File: images/sghm.png Graphic file (type png)
 <use images/sghm.png>
-Package luatex.def Info: images/sghm.png  used on input line 103.
+Package luatex.def Info: images/sghm.png  used on input line 97.
 (luatex.def)             Requested size: 120.0pt x 120.00307pt.
  [1
 
@@ -1152,146 +1152,137 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 
 \openout6 = Facharbeit_KI.lof
  [2] [3]
-<images/zahlen.png, id=165, 462.528pt x 260.172pt>
+<images/zahlen.png, id=180, 462.528pt x 260.172pt>
 File: images/zahlen.png Graphic file (type png)
 <use images/zahlen.png>
-Package luatex.def Info: images/zahlen.png  used on input line 158.
+Package luatex.def Info: images/zahlen.png  used on input line 154.
 (luatex.def)             Requested size: 230.0pt x 129.37505pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1<./images/zahlen.png>]
-<images/ki_kategorie.png, id=171, 462.528pt x 260.172pt>
+<images/ki_kategorie.png, id=191, 462.528pt x 260.172pt>
 File: images/ki_kategorie.png Graphic file (type png)
 <use images/ki_kategorie.png>
-Package luatex.def Info: images/ki_kategorie.png  used on input line 199.
+Package luatex.def Info: images/ki_kategorie.png  used on input line 192.
 (luatex.def)             Requested size: 250.0pt x 140.62575pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
 [2<./images/ki_kategorie.png>]
-<images/slearning.png, id=176, 462.528pt x 260.172pt>
+<images/slearning.png, id=200, 462.528pt x 260.172pt>
 File: images/slearning.png Graphic file (type png)
 <use images/slearning.png>
-Package luatex.def Info: images/slearning.png  used on input line 216.
-(luatex.def)             Requested size: 300.0pt x 168.75645pt.
-<images/number.png, id=178, 462.528pt x 260.172pt>
-File: images/number.png Graphic file (type png)
-<use images/number.png>
-Package luatex.def Info: images/number.png  used on input line 242.
+Package luatex.def Info: images/slearning.png  used on input line 210.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
 [3<./images/slearning.png>]
-<images/neuron.png, id=186, 462.528pt x 260.172pt>
+<images/number.png, id=211, 462.528pt x 260.172pt>
+File: images/number.png Graphic file (type png)
+<use images/number.png>
+Package luatex.def Info: images/number.png  used on input line 238.
+(luatex.def)             Requested size: 300.0pt x 168.75645pt.
+<images/neuron.png, id=215, 462.528pt x 260.172pt>
 File: images/neuron.png Graphic file (type png)
 <use images/neuron.png>
-Package luatex.def Info: images/neuron.png  used on input line 261.
+Package luatex.def Info: images/neuron.png  used on input line 257.
 (luatex.def)             Requested size: 350.0pt x 196.8832pt.
-<images/neural_network.png, id=188, 462.528pt x 260.172pt>
+<images/neural_network.png, id=220, 462.528pt x 260.172pt>
 File: images/neural_network.png Graphic file (type png)
 <use images/neural_network.png>
-Package luatex.def Info: images/neural_network.png  used on input line 271.
+Package luatex.def Info: images/neural_network.png  used on input line 267.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
  [4<./images/number.png>] [5<./images/neuron.png><./images/neural_network.png>]
-<images/verbindung.png, id=206, 462.528pt x 260.172pt>
+<images/verbindung.png, id=244, 462.528pt x 260.172pt>
 File: images/verbindung.png Graphic file (type png)
 <use images/verbindung.png>
-Package luatex.def Info: images/verbindung.png  used on input line 301.
+Package luatex.def Info: images/verbindung.png  used on input line 297.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6]
-<images/regression.png, id=226, 462.528pt x 260.172pt>
+<images/regression.png, id=266, 462.528pt x 260.172pt>
 File: images/regression.png Graphic file (type png)
 <use images/regression.png>
-Package luatex.def Info: images/regression.png  used on input line 332.
+Package luatex.def Info: images/regression.png  used on input line 329.
 (luatex.def)             Requested size: 300.0pt x 168.75645pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [7<./images/verbindung.png>] [8<./images/regression.png>]
-<images/filter.png, id=252, 462.528pt x 260.172pt>
+<images/filter.png, id=300, 462.528pt x 260.172pt>
 File: images/filter.png Graphic file (type png)
 <use images/filter.png>
-Package luatex.def Info: images/filter.png  used on input line 393.
+Package luatex.def Info: images/filter.png  used on input line 390.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
  [9<./images/filter.png>] [10] [11] [12]
-<images/lrate.png, id=297, 462.528pt x 260.172pt>
+<images/lrate.png, id=364, 462.528pt x 260.172pt>
 File: images/lrate.png Graphic file (type png)
 <use images/lrate.png>
-Package luatex.def Info: images/lrate.png  used on input line 548.
+Package luatex.def Info: images/lrate.png  used on input line 546.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/beispiel.png, id=298, 462.528pt x 260.172pt>
+<images/beispiel.png, id=368, 462.528pt x 260.172pt>
 File: images/beispiel.png Graphic file (type png)
 <use images/beispiel.png>
-Package luatex.def Info: images/beispiel.png  used on input line 562.
+Package luatex.def Info: images/beispiel.png  used on input line 560.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
 [13] [14<./images/lrate.png><./images/beispiel.png>]
-<images/cnn.png, id=316, 462.528pt x 260.172pt>
+<images/cnn.png, id=389, 462.528pt x 260.172pt>
 File: images/cnn.png Graphic file (type png)
 <use images/cnn.png>
-Package luatex.def Info: images/cnn.png  used on input line 591.
+Package luatex.def Info: images/cnn.png  used on input line 589.
 (luatex.def)             Requested size: 400.0pt x 225.00993pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15]
-<images/overfitting.png, id=324, 462.528pt x 260.172pt>
+<images/overfitting.png, id=402, 462.528pt x 260.172pt>
 File: images/overfitting.png Graphic file (type png)
 <use images/overfitting.png>
-Package luatex.def Info: images/overfitting.png  used on input line 627.
+Package luatex.def Info: images/overfitting.png  used on input line 626.
 (luatex.def)             Requested size: 330.0pt x 185.63249pt.
  [16<./images/cnn.png>]
-<images/accuracydiagram.png, id=330, 462.528pt x 260.172pt>
+<images/accuracydiagram.png, id=411, 462.528pt x 260.172pt>
 File: images/accuracydiagram.png Graphic file (type png)
 <use images/accuracydiagram.png>
-Package luatex.def Info: images/accuracydiagram.png  used on input line 646.
+Package luatex.def Info: images/accuracydiagram.png  used on input line 645.
 (luatex.def)             Requested size: 340.0pt x 191.25784pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--675
+[17<./images/overfitting.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 656--674
 
  []
 
-[17<./images/overfitting.png>] [18<./images/accuracydiagram.png>] [19]
+[18<./images/accuracydiagram.png>] [19] [20] [21]
 
-LaTeX Warning: Reference `1' on page 20 undefined on input line 689.
-
-
-LaTeX Warning: Reference `2' on page 20 undefined on input line 694.
-
-[20] 
 AED: lastpage setting LastPage
-[21] (./Facharbeit_KI.aux)
-
-LaTeX Warning: There were undefined references.
-
+[22] (./Facharbeit_KI.aux)
 Package rerunfilecheck Info: File `Facharbeit_KI.out' has not changed.
-(rerunfilecheck)             Checksum: F2752FC611E7CBAC8291561CE224C75A;3227.
+(rerunfilecheck)             Checksum: 78B4A8D5997EAB62EA282972CA492614;3227.
 )
 
 Here is how much of LuaTeX's memory you used:
- 31382 strings out of 478382
+ 31406 strings out of 478382
  125240,1977958 words of node,token memory allocated
- 948 words of node memory still in use:
+ 998 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 1 margin_ke
-rn, 3 glyph, 90 attribute, 58 glue_spec, 90 attribute_list, 3 write, 7 pdf_actio
-n nodes
-   avail lists: 1:1,2:904,3:858,4:224,5:554,6:71,7:7909,8:208,9:917,10:23,11:537
-
- 50053 multiletter control sequences out of 65536+600000
+rn, 3 glyph, 95 attribute, 58 glue_spec, 95 attribute_list, 3 write, 12 pdf_acti
+on nodes
+   avail lists: 1:1,2:942,3:1035,4:258,5:556,6:65,7:7689,8:207,9:927,10:23,11:44
+5
+ 50064 multiletter control sequences out of 65536+600000
  55 fonts using 17232303 bytes
- 99i,12n,115p,1051b,500s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,12n,115p,1051b,584s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/WINDOWS/Fonts/arialnbi.ttf><C:/WINDOWS/Fonts/arialni.ttf><C:/WINDOWS/Fonts/a
 rialbd.ttf><C:/WINDOWS/Fonts/arial.ttf><C:/Users/Leon/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Leon/AppData/Local/Progr
@@ -1305,9 +1296,9 @@ Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
 y10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmsy8.pfb>
-Output written on Facharbeit_KI.pdf (25 pages, 3251328 bytes).
+Output written on Facharbeit_KI.pdf (26 pages, 3269748 bytes).
 
-PDF statistics: 446 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 131072)
+PDF statistics: 538 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 131072)
  184 words of extra memory for PDF output out of 10000 (max. 100000000)
 
