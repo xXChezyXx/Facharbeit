@@ -27,6 +27,7 @@
 \usepackage{fancyhdr}
 \usepackage[no-math]{fontspec}
 
+
 % Für keine Abbildungen
 %\usepackage{comment}
 %\excludecomment{figure}
@@ -102,6 +103,34 @@
     
     \end{titlepage}
 
+\newpage
+{
+\centering
+\Large
+\textbf{Schiller-Gymnasium Hameln Europaschule}
+}\\[1.5cm]
+SF-Kursgruppe: 12g, SFg\\[0.5cm]
+Name des Schülers: Bui Anh Minh Leon Phan\\[0.5cm]
+Thema: Umsetzung einer Künstlichen Intelligenz zur Erkennung handgeschriebener Zahlen\\[0.5cm]
+Namen der Fachlehrkräfte: Herr Dr.\ Kajari, Herr Fistler\\[0.5cm]
+Ausgabetermin des Themas: Freitag, der 27.01.2023\\[0.5cm]
+Abgabetermin der Facharbeit: Freitag, der 10.03.2023\\[2cm]
+Bewertung der Tutoren:
+\noindent
+\begin{tabular}{ll}
+    \makebox[2in]{\hrulefill}
+\end{tabular}\\[2cm]
+Unterschrift des Schülers:\noindent
+\begin{tabular}{ll}
+    \makebox[2in]{\hrulefill}
+\end{tabular}\\[2cm]
+Unterschrift der Fachlehrkraft:\noindent
+\begin{tabular}{ll}
+    \makebox[2in]{\hrulefill}
+\end{tabular}
+
+\newpage
+
 \newgeometry{
     left=50mm,
     right=10mm,
@@ -166,8 +195,8 @@ komplexe Strukturen erkennen kann, welche ein Mensch vielleicht nicht erkennt, w
 So weckte das Thema mein Interesse, mich damit zu beschäftigen, da nur anhand der Mathematik die Entscheidungsprozesse dargestellt werden könnnen.
 Auch ist die Facharbeit von Vorteil für mich, da ich an das Bundeswettbewerb-KI teilnehmen möchte~\cite{10}.
 Ziel der Facharbeit ist es, eine KI zu programmieren, die handgeschriebene Zahlen mit einer Wahrscheinlichkeit von mindestens 97\% bestimmen kann.
-Auch soll die Möglichkeit bestehen, eigene handgeschriebene Zahlen von der KI testen zu lassen. Um dies umsetzen zu können, wird der Begriff KI definiert und
-verschiedene Arten von KIen, welche Funktion jede einzelne Art besitzt, auseinandergesetzt.??? Die angewendete Lernmethode wird genauer erläutert.
+Um dies umsetzen zu können, wird der Begriff KI definiert und verschiedene Arten von KIen,
+welche Funktion jede einzelne Art besitzt, auseinandergesetzt.??? Die angewendete Lernmethode wird genauer erläutert.
 Danach wird in Kapitel 3 mehrschichtiges Lernen erklärt. Zudem werden Voraussetzungen für diese Methodik genannt. Im Anschluss wird in Kapitel 4
 der Aufbau eines faltenden neuronalen Netzwerkes dargestellt und die Funktionsweise mathematisch näher gebracht. Dabei wird darauf eingegangen, wie eine KI
 lernt und wie sie bestimmte Merkmale der Zahlen erkennen kann mithilfe von 2D Faltung (2D Convolution). Der Begriff Merkmal wird auch in dem Kapitel erläutert.
@@ -235,7 +264,7 @@ Format und ist farblos. Die Bilder werden nur mit der Hellgikeit zwischen 0 und 
 es sich handelt, damit später geprüft werden kann, ob die KI die Zahl richtig erkannt hat oder ob sie falsch liegt.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=300pt, keepaspectratio]{images/number}
+    \includegraphics[width=250pt, keepaspectratio]{images/number}
     \caption[Handgeschriebene Zahl 5~\cite{3}]{Handgeschriebene Zahl als Abbildung in 28\times28 Pixeln dargestellt, dabei ist die richtige Ausgabe die Zahl 5~\cite{3}.}
 \end{figure}
 Der Datensatz ist gut zum Lernen, denn er besitzt keine Fehlwerte oder verzerrende Bilder, die die KI beim Lernen stören kann. Auch ist die
@@ -254,7 +283,7 @@ Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidu
 Es entsteht eine Kettenreaktion~\cite{11}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=350pt, keepaspectratio]{images/neuron}
+    \includegraphics[width=300pt, keepaspectratio]{images/neuron}
     \caption[Aufbau eines Neuron~\cite{11}]{Das einzelne Neuron sendet mithilfe der Synapsen Signale an die verbundenen Neuronen, die diese Signale mit den Dendriten aufnehmen~\cite{11}.}
 \end{figure}
 Da das menschliche Gehirn imitiert werden soll, werden künstliche Neuronen erschaffen, die einen Wert von den vorherigen künstlichen Neuronen verarbeiten.
@@ -264,7 +293,7 @@ dass die künstlichen Neuronen deren Struktur nicht ändern können, dafür kön
 negative Werte annehmen kann, was bei den Neuronen nicht der Fall ist, da das Axon nur das Signal weiterleiten oder abbrechen kann. Sie können auch mit 0 und 1 bezeichnet werden~\cite{5}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=300pt, keepaspectratio]{images/neural\_network}
+    \includegraphics[width=250pt, keepaspectratio]{images/neural\_network}
     \caption[Künstliches Neuronales Netzwerk]{Künstliches Neuronales Netzwerk mit insgesamt 37 künstliche Neuronen in 6 Schichten verteilt.}\label{fnnpic}
 \end{figure}
 Das Netzwerk kann unterschiedliche Anordnungen von künstlichen Neuronen besitzen. Die geeignetste Anordnung nennt sich
@@ -294,7 +323,7 @@ die einzelne Werte $ x_{j}^{(\alpha-1,1)} $ mit einem Gewicht $ w_{i,j}^{(\alpha
 $ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=300pt, keepaspectratio]{images/verbindung}
+    \includegraphics[width=250pt, keepaspectratio]{images/verbindung}
     \caption[Verbindungen zwischen den Neuronen]{Die Verbindungen zwischen den Neuronen werden mit den Parameter $w$ erweitert.}\label{connection}
 \end{figure}
 Allgemein gilt dann für die Berechnung:
@@ -326,7 +355,7 @@ In Abbildung~\ref{regressionpic} ist die Regression bei einer
 nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=300pt, keepaspectratio]{images/regression}
+    \includegraphics[width=250pt, keepaspectratio]{images/regression}
     \caption[Lineare Regression und nicht lineare Regression~\cite{6}]{Im ersten Graph ist sie gut mit der lineare Regressionen lösbar. Beim zweiten Graph ist es
     unmöglich eine genaue Regression zu bekommen mit einer lineare Regression. Dafür wird eine nicht lineare Regression verwendet~\cite{6}.}\label{regressionpic}
 \end{figure}
@@ -543,7 +572,7 @@ Es ist wichtig, einen guten Wert für die Lernrate zu setzen, denn falls sie zu 
 Wenn aber die Lernrate zu klein ist, dann dauert auch das Lernen deutlich länger, da die Optimierung langsamer am Minimum antastet.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=400pt, keepaspectratio]{images/lrate}
+    \includegraphics[width=300pt, keepaspectratio]{images/lrate}
     \caption[Einstellen der Lernrate~\cite{22}]{Sehr gut erkennbar sind die Iterationen: Wenn die Lernrate richtig gewählt ist, dann erreicht sie das Minimun schneller.~\cite{22}}
 \end{figure}
 Trotz des Algorithmus kann die Berechnung immer noch nicht effizient genug sein, denn wenn als
@@ -586,7 +615,7 @@ Mehr dazu im Kapitel~\ref{auswertung}. Für die Architektur des Netzwerkes werde
 Der Aufbau ist gut im Abbild 12 zu erkennen.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=400pt, keepaspectratio]{images/cnn}
+    \includegraphics[width=325pt, keepaspectratio]{images/cnn}
     \caption[Architektur eines CNNs]{Insgesamt 8 Schichten mit gestapelten Operationen, wie die 2D Convolution, oder der Max Pooling.
     Die Anzahl der Ausgabeschicht liegt bei 10, für die einzelnen Ziffern von 0-9.}
 \end{figure}
@@ -623,7 +652,7 @@ Dafür werden zwei neue Begriffe definiert: Überfittung (Overfitting) und Unter
 Als Beispiel werden 3 verschiedene Regressionen verwendet:
 \begin{figure}[h]
     \centering
-    \includegraphics[width=330pt, keepaspectratio]{images/overfitting}
+    \includegraphics[width=300pt, keepaspectratio]{images/overfitting}
     \caption[Overfitting und Underfitting~\cite{7}]{Die Regressionen werden als Beispiel mit Overfitting und Underfitting dargestellt~\cite{7}.}
 \end{figure}
 Von den 3 Regressionen ist die erste Regression gut gewählt, denn sie verläuft nicht allzu perfekt in den Punkten. Trotzdem sind die
@@ -642,7 +671,7 @@ Das Diagramm, das in Kapitel Trainingsphase erwähnt wurde, ist ein Epoche-Accur
 beendet wurde:
 \begin{figure}[h]
     \centering
-    \includegraphics[width=340pt, keepaspectratio]{images/accuracydiagram}
+    \includegraphics[width=375pt, keepaspectratio]{images/accuracydiagram}
     \caption[Epoche-Accuracy Diagramm]{Epoche-Accuracy Diagramm mit den Werten der Testdaten und der Validierungsdaten. Der Abstand vergrößert sich,
     die KI fängt an zu überfitten.}
 \end{figure}
@@ -751,11 +780,15 @@ Dies ist aber nur ein Ausblick für die Verbesserung der KI, welches dann in der
 
 \end{thebibliography}
 }
-\newpage
 \section*{Schülererklärung}
 Hiermit erkläre ich, dass ich die vorliegende Seminarfacharbeit selbstständig angefertigt,
 keine anderen als die angegebenen Hilfsmittel benutzt und die Stellen der Seminarfacharbeit,
 die im Wortlaut oder im wesentlichen Inhalt aus anderen Werken entnommen wurden,
 mit genauer Quellenangabe kenntlich gemacht habe.
+\\[2cm]
+Unterschrift des Schülers:\noindent
+\begin{tabular}{ll}
+    \makebox[2in]{\hrulefill}
+\end{tabular}
 
 \end{document}
