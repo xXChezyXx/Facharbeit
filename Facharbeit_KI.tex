@@ -1,7 +1,3 @@
-% TODOLIST:
-% Durchlesen und schauen, was man verbessern kann
-%??? fixxen
-
 \documentclass[11pt]{article}
 \usepackage{geometry}
 \usepackage[onehalfspacing]{setspace}
@@ -26,6 +22,7 @@
 \usepackage[format=plain,labelfont={bf,it},textfont=it]{caption}
 \usepackage{fancyhdr}
 \usepackage[no-math]{fontspec}
+\usepackage{amssymb}
 
 
 % Für keine Abbildungen
@@ -43,6 +40,9 @@
     }
 \geometry{a4paper}
 
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancypagestyle{plain}{}
@@ -55,8 +55,8 @@
 
     \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
     \centering
-    \textsc{\LARGE Schiller-Gymnasium Hameln}\\[1.5cm] % Name of your university/college
-    \textsc{\Large 12g Seminarfacharbeit}\\[0.5cm] % Major heading such as course name
+    \textsc{\LARGE Schiller-Gymnasium Hameln}\\[1.5cm]
+    \textsc{\Large 12g Seminarfacharbeit}\\[0.5cm]
     \textsc{\Large Mathematik/Physik}\\[0.5cm]
     
     %----------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@
     
     \HRule{} \\[0.4cm]
     { \huge \bfseries Umsetzung einer Künstlichen Intelligenz
-    \\zur Erkennung handgeschriebener Zahlen}\\[0.4cm] % Title of your document
+    \\zur Erkennung handgeschriebener Zahlen}\\[0.4cm]
     \HRule{} \\[1.5cm]
      
     %----------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@
     %	DATE SECTION
     %----------------------------------------------------------------------------------------
     
-    {\large 27. Januar 2023}\\[2cm] % Date, change the \today to a set date if you want to be precise
+    {\large 27. Januar 2023}\\[2cm]
     
     %----------------------------------------------------------------------------------------
     %	LOGO SECTION
@@ -177,28 +177,28 @@ Unterschrift der Fachlehrkraft:\noindent
 \section{Einleitung}
 Das menschliche Gehirn wird von vielen nicht richtig verstanden. Wird Abbildung 1 betrachtet, dann erkennt der Beobachter die Zahl 74290,
 was leicht zu bestimmen ist. Wenn aber der Vorgang versucht wird zu erklären, so wird es klar, dass es nicht ganz einfach ist
-und dass es absolut komplex werden kann.
+und dass es komplex werden kann.
 \begin{figure}[h]
     \centering
     \includegraphics[width=230pt, keepaspectratio]{images/zahlen}
     \caption[Handgeschriebene]{Erkennbar ist die handgeschriebene Zahl 74290.}
 \end{figure}
-Die Problemstellung entsteht, wie handgeschriebene Zahlen erkannt werden können.
+Die Problemstellung lautet: Wie können handgeschriebene Zahlen erkannt werden.
 Dieses Thema ist von besonderem Interesse, weil das Verständnis zur Funktionsweise eines menschlichen Gehirns zum Teil vertieft werden kann.
-Außerdem wird der Mechanismus eines Textscanners verstanden, was im Alltag von den meisten unbewusst benutzt wird.
+Außerdem wird der Mechanismus eines Textscanners verstanden, was im Alltag von den Meisten unbewusst benutzt wird.
 Viele Forscher versuchten deshalb in der Vergangenheit nach Problemlösungen zu suchen. Ein Ansatz wäre das Herausfinden
 der Struktur der einzelnen Zahlen und damit die Unterscheidungen zwischen den Zahlen.
-Doch jedes Merkmal einer Zahl selber herauszufinden und dann speziell für jede Zahl das zu programmieren kann
+Doch jedes Merkmal einer Zahl selber herauszufinden und dann speziell für jede Zahl das zu programmieren, kann
 anstrengend sein und lange dauern. Mithilfe einer Künstlichen Intelligenz (KI) kann die Erkennung von handgeschriebenen Zahlen ermöglicht werden. 
 Schon heute werden KI-Systeme in unseren Alltag integriert, wie zum Beispiel Textübersetzer oder Gesichtserkennung im Smartphone. Da die KI solche
 komplexe Strukturen erkennen kann, welche ein Mensch vielleicht nicht erkennt, wird in der Facharbeit für die Erkennung der handgeschriebenen Zahlen eine KI programmiert.
 So weckte das Thema mein Interesse, mich damit zu beschäftigen, da nur anhand der Mathematik die Entscheidungsprozesse dargestellt werden könnnen.
-Auch ist die Facharbeit von Vorteil für mich, da ich an das Bundeswettbewerb-KI teilnehmen möchte~\cite{10}.
+Auch ist die Facharbeit von Vorteil für mich, da ich an dem Bundeswettbewerb-KI teilnehmen möchte~\cite{10}.
 Ziel der Facharbeit ist es, eine KI zu programmieren, die handgeschriebene Zahlen mit einer Wahrscheinlichkeit von mindestens 97\% bestimmen kann.
-Um dies umsetzen zu können, wird der Begriff KI definiert und verschiedene Arten von KIen,
-welche Funktion jede einzelne Art besitzt, auseinandergesetzt.??? Die angewendete Lernmethode wird genauer erläutert.
+Um dies umsetzen zu können, wird zunächst der Begriff KI definiert und sich mit den verschiedenen Arten von KIen,
+welche Funktion jede einzelne Art besitzt, auseinandergesetzt. Die angewendete Lernmethode wird genauer erläutert.
 Danach wird in Kapitel 3 mehrschichtiges Lernen erklärt. Zudem werden Voraussetzungen für diese Methodik genannt. Im Anschluss wird in Kapitel 4
-der Aufbau eines faltenden neuronalen Netzwerkes dargestellt und die Funktionsweise mathematisch näher gebracht. Dabei wird darauf eingegangen, wie eine KI
+der Aufbau eines faltenden Neuronalen Netzwerkes dargestellt und die Funktionsweise mathematisch näher gebracht. Dabei wird darauf eingegangen, wie eine KI
 lernt und wie sie bestimmte Merkmale der Zahlen erkennen kann mithilfe von 2D Faltung (2D Convolution). Der Begriff Merkmal wird auch in dem Kapitel erläutert.
 Mithilfe der Theorie wird dann in Kapitel 5 die KI umgesetzt und programmiert. Dabei wird sie ausgewertet für analysiert, worauf bei der Lernphase
 geachtet werden muss. Dies kann durch die Analyse optimiert werden. Zum Schluss wird angeschaut, ob das Ziel der Facharbeit erreicht wurde und welche
@@ -209,7 +209,7 @@ Verbesserungsvorschlägen eingefügt werden können, damit die KI eine höhere W
 Der Begriff Künstliche Intelligenz (KI) ist sehr schwer definierbar, denn es mangelt an der Definition der Bezeichnung Intelligenz.
 Allgemein kann KI definiert werden als der Versuch, bestimmte Entscheidungsstrukturen von Menschen mithilfe von
 Algorithmen nachzubilden~\cite{4}. Manche Experten behaupten aber auch, dass eine KI nicht gleich einer KI ist, sondern sie in zwei Bereiche unterteilt werden kann.
-Dabei wird die KI zwischen einer starker KI und einer schwacher KI unterschieden. Schwache KIen sind nur in bestimmten Teilbereichen in der Lage,
+Dabei wird die KI zwischen einer starken KI und einer schwachen KI unterschieden. Schwache KIen sind nur in bestimmten Teilbereichen in der Lage,
 an die menschliche Intelligenz heranzukommen. Doch sie sind nicht anpassungsfähig. Das bedeutet, dass eine schwache KI, die zum Beispiel auf Schach
 spezialisiert wurde, nur die Intelligenz im Bereich Schach besitzt. Selbstständiges Fahren ist mit dieser KI nicht möglich. Dafür muss eine
 andere KI spezialisiert werden, damit sie selbstständig fahren kann. Dagegen kann eine starke KI sich an derzeitige Situationen anpassen~\cite{2}.
@@ -225,11 +225,11 @@ Eine Unterkategorie der KI wäre der Bereich maschinelles Lernen. Maschinelles L
 Daten Muster zu erkennen. Dazu werden die aus den Daten gewonnene Erkenntnisse zur Problemlösung verwendet oder der Algorithmus wird auf
 die Daten zugeschnitten und verallgemeinert.
 Der zweite Teilbereich wäre mehrschichtiges Lernen, das dem maschinellen Lernen sehr ähnelt. Der Unterschied liegt aber an der Art und Weise, wie
-sie mit den Daten arbeitet. Mehrschichtiges Lernen versucht das menschliche Gehirn durch ein künstliches Neuronales Netzwerk zu imitieren.
+sie mit den Daten arbeitet. Mehrschichtiges Lernen versucht das menschliche Gehirn durch ein Künstliches Neuronales Netzwerk zu imitieren.
 Durch das Imitieren sind die Strukturen vom mehrschichtigen Lernen merklich komplexer als die vom maschinellen Lernen, denn
 maschinelles Lernen basiert nur auf Algorithmen, die leichter verständlicher sind als das menschliche Gehirn. Deswegen sind
 sehr große Datensätze von Vorteil für mehrschichtiges Lernen, da deutlich mehr Merkmale der Daten erkannt werden. So basiert die KI auf
-mehrschichtiges Lernen in der Facharbeit.
+mehrschichtigem Lernen in der Facharbeit.
 \subsection{Überwachtes Lernen}
 Überwachtes Lernen ist eine Methode, wie die KI mit Daten lernen kann. Dazu hat die Datei 2 wichtige Merkmale, nämlich die Eingabe und die
 Ausgabe. Die KI führt mit den Eingaben eine Lernstrategie aus, in dem Fall einen Algorithmus, woraus am Ende eine Ausgabe resultiert. Mit der Ausgabe der Datei wird nun überprüft, ob
@@ -259,24 +259,24 @@ Lernen, ein Künstliches Neuronales Netzwerk. Dafür gibt es verschieden Modelle
 Datensätze sind für KIen das wichtigste Werkzeug zum Lernen. Denn die Qualität des Datensatzes bestimmt die Lerneffizienz der KI.\@
 Je schlechter die Qualität ist, desto schlechter lernt auch die KI.\@ Ein wichtiges Merkmal für die Qualität sind die Auflösung, die Anzahl der Daten und die Variabilität.
 Für mehrschichtiges Lernen wird ein großer Datensatz gebraucht. Dabei wird für die Problemlösung der Datensatz von Yann LeCun gewählt, dass sich MNIST Database nennt~\cite{3}.
-Dieser besitzt insgesamt 70000 Bilder mit handgeschrieben Zahlen, die die Werte zwischen 0 und 9 besitzt. Jedes Bild hat ein 28$\times$28 Pixel
-Format und ist farblos. Die Bilder werden nur mit der Hellgikeit zwischen 0 und 255 darstellt. Außerdem hat jedes Bild einen Wert, um welche Zahl
+Dieser besitzt insgesamt 70000 Bilder mit handgeschrieben Zahlen, die die Werte zwischen 0 und 9 besitzen. Jedes Bild hat ein 28$\times$28 Pixel
+Format und ist farblos. Die Bilder werden nur mit der Hellgikeit zwischen 0 und 255 dargestellt. Außerdem hat jedes Bild einen Wert, um welche Zahl
 es sich handelt, damit später geprüft werden kann, ob die KI die Zahl richtig erkannt hat oder ob sie falsch liegt.
 \begin{figure}[h]
     \centering
     \includegraphics[width=250pt, keepaspectratio]{images/number}
     \caption[Handgeschriebene Zahl 5~\cite{3}]{Handgeschriebene Zahl als Abbildung in 28\times28 Pixeln dargestellt, dabei ist die richtige Ausgabe die Zahl 5~\cite{3}.}
 \end{figure}
-Der Datensatz ist gut zum Lernen, denn er besitzt keine Fehlwerte oder verzerrende Bilder, die die KI beim Lernen stören kann. Auch ist die
-Auflösung in Ordnung und 70000 Bilder sind für kleine Aufgaben angemessen. %Nach welchen Kriterien wird dies bewertet?
+Nach den vorhergenannten Kriterien ist der Datensatz gut zum Lernen, denn die Auflösung des Bildes ist ausreichend und die Variabilität ist vielfältig.
+Außerdem sind 70000 Bilder ausreichend für diese Problemstellung.
 
-\subsection{Künstliches neuronales Netzwerk}\label{nn} %Beim Erklären richtig reingeschissen .-.
+\subsection{Künstliches Neuronales Netzwerk}\label{nn}
 Im menschlichen Gehirn befinden sich großen Mengen von Neuronen, die miteinander interagieren. 
 Das Neuron besteht aus drei relevanten Komponenten. Die erste Komponente besteht aus Empfängern, die Signale von anderen verbundenen Neuronen empfängt.
 Sie werden auch Dendriten genannt. Eine weitere Komponente wären die Synapsen. Die Aufgabe ist es, sogenannte Neurotransmitter an anderen verbundenen Neuronen
 weiterzuleiten, falls das Signal ankommen sollte. Damit das Signal ankommt, braucht es die dritte Komponente und zwar das Axon. Das Axon wird als Leitungsbahn
 verwendet, um Signale transportieren zu können und besteht aus einer langen dünnen Röhre. Diese Röhre kann das Signal zu den Synapsen weiterleiten, unter Voraussetzung, dass der Schwellenwert erreicht ist.
-Fall er nicht erreicht werden sollte, wird das Signal abgebrochen. Der Schwellenwert wird erreicht, wenn genug Neurotransmitter vorhanden sind.
+Falls er nicht erreicht werden sollte, wird das Signal abgebrochen. Der Schwellenwert wird erreicht, wenn genug Neurotransmitter vorhanden sind.
 Sobald das Signal ankommt, werden die Neurotransmitter
 ausgeschüttet und die Dendriten der anderen verbundenen Neuronen nehmen sie auf.
 Dadurch ändert sich die Struktur des Neurons und es kommt wieder zur Entscheidung, ob das Signal weitergeleitet werden soll oder abgebrochen wird.
@@ -289,7 +289,7 @@ Es entsteht eine Kettenreaktion~\cite{11}.
 Da das menschliche Gehirn imitiert werden soll, werden künstliche Neuronen erschaffen, die einen Wert von den vorherigen künstlichen Neuronen verarbeiten.
 Durch die ganzen Verbindungen zwischen den Neuronen wird das auch als Netzwerk bezeichnet. Viele Eigenschaften der Neuronen werden mitgenommen, wie zum Beispiel die Dendriten, die Synapsen sowie
 der Schwellenwert in der Informatik auch Bias genannt. Der Bias spielt im Kapitel~\ref{fcnn} eine Rolle. Unterschied ist aber,
-dass die künstlichen Neuronen deren Struktur nicht ändern können, dafür können ihnen Werte gegeben werden. Das bedeutet, dass das künstliche Neuron
+dass die künstlichen Neuronen ihre Struktur nicht ändern können, dafür können ihnen Werte gegeben werden. Das bedeutet, dass das künstliche Neuron
 negative Werte annehmen kann, was bei den Neuronen nicht der Fall ist, da das Axon nur das Signal weiterleiten oder abbrechen kann. Sie können auch mit 0 und 1 bezeichnet werden~\cite{5}.
 \begin{figure}[h]
     \centering
@@ -297,11 +297,11 @@ negative Werte annehmen kann, was bei den Neuronen nicht der Fall ist, da das Ax
     \caption[Künstliches Neuronales Netzwerk]{Künstliches Neuronales Netzwerk mit insgesamt 37 künstliche Neuronen in 6 Schichten verteilt.}\label{fnnpic}
 \end{figure}
 Das Netzwerk kann unterschiedliche Anordnungen von künstlichen Neuronen besitzen. Die geeignetste Anordnung nennt sich
-konvolutionales neuronales Netzwerk (CNN), denn sie wird häufig für Bildererkennung verwendet. Grund dafür ist die Extrahierung der Merkmale
+Faltendes Neuronales Netzwerk (CNN), denn sie wird häufig für Bildererkennung verwendet. Grund dafür ist die Extrahierung der Merkmale
 des Bildes. Denn bevor das Bild an die künstlichen Neuronen weitergeleitet werden, werden unnötige Merkmale mithilfe von Konvolution aus dem Bild entfernt, sodass der
 Lernprozess der KI auf das Wichtigste begrenzt wird~\cite{12}. Welche Merkmale eines Bildes gemeint sind, wird im Kapitel~\ref{feature} verdeutlicht.
 
-\section{Konvolutionales neuronales Netzwerk}
+\section{Faltendes Neuronales Netzwerk}
 
 Das CNN kann in zwei Bereichen gegliedert werden. Im ersten Bereich werden Merkmale des Bildes extrahiert, wie zum Beispiel Ecken, Kurven, usw. Diese nennt sich Feature Extraction.
 Die Extrahierung wird durch 2D Convolution berechnet. Im zweiten Bereich werden die
@@ -309,8 +309,8 @@ wichtigen Merkmale aus der Feature Extraction in die sogenannte Klassifikationse
 der KI an, die dann am Ende des Netzwerkes eine Klasse ausgibt~\cite{12}.
 
 \subsection{Klassifikationsebene}\label{fcnn}
-In der Klassifikationsebene befindet sich das künstliche neuronale Netzwerk, das eine ähnliche Struktur wie bei Abbildung~\ref{fnnpic} hat.
-Diese Struktur nennt sich auch vorwärtsgerichtetes neuronales Netzwerk (FNN) und ist in mehreren Schichten aufgebaut~\cite{5}. In Abbildung~\ref{fnnpic} wäre die Anzahl
+In der Klassifikationsebene befindet sich das Künstliche Neuronale Netzwerk, das eine ähnliche Struktur wie bei Abbildung~\ref{fnnpic} hat.
+Diese Struktur nennt sich auch Vorwärtsgerichtetes Neuronales Netzwerk (FNN) und ist in mehreren Schichten aufgebaut~\cite{5}. In Abbildung~\ref{fnnpic} wäre die Anzahl
 der Schichten $A = 6$. Die erste Schicht nennt sich Eingabeschicht, denn von dort kommen die Daten in die Neuronen rein, während bei
 der n Schicht die KI ein Ergebnis ausgibt. Diese Schicht heißt Ausgabeschicht. Die Schichten dazwischen werden ausgeblendete Schichten genannt.
 Die ausgeblendete Schichten sind wichtige Teile des Netzwerkes, denn durch diese werden Merkmale gesucht und analysiert.
@@ -329,12 +329,13 @@ $ N_{\alpha} $ beschreibt die Anzahl der Neuronen auf der Schicht $\alpha$.
 Allgemein gilt dann für die Berechnung:
 \begin{equation}
     \label{xwithoutfunction}
-    \bar{x}_{i}^{(\alpha,1)} := \sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha,1)} x_{j}^{(\alpha-1,1)} + b_{i}^{(\alpha,1)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}. %Was ist dieses \bar{x}_{i}^{(\alpha,1)} da?
+    \bar{x}_{i}^{(\alpha,1)} := \sum_{j=1}^{N_{\alpha-1}} w_{i,j}^{(\alpha,1)} x_{j}^{(\alpha-1,1)} + b_{i}^{(\alpha,1)} \quad i \in \{1,\ldots,N_{\alpha}\}, j \in \{1,\ldots,N_{\alpha-1}\}.
 \end{equation}
+Dies ist für die Berechnung eines Neurons $i$ in der Schicht $\alpha$.
 Das $ b_{i}^{(\alpha,1)} $ in der Gleichung steht für Bias und ist ein weiterer Parameter zum Einstellen wie das Gewicht. Beide spielen hier eine wichtige Rolle
 für das Weiterleiten der Neuronen. Das Gewicht entscheidet, wie wichtig der Wert vom Neuron ist. Je höher der Wert ist, desto entscheidender
 ist das Neuron. Wichtig ist anzumerken, dass die Gewichte und die Biases verstellbare Parameter sind, die für das Lernen der KI eine wichtige Rolle
-spielt. Damit die KI lernen kann, müssen die Parameter $w$ und $b$ optimal gesetzt werden, sodass die KI richtige Voraussagen treffen kann, um welche Zahl es sich handelt.
+spielen. Damit die KI lernen kann, müssen die Parameter $w$ und $b$ optimal gesetzt werden, sodass die KI richtige Voraussagen treffen kann, um welche Zahl es sich dabei handelt.
 Dafür wird die Fehlerzurückführung (Backpropagation) verwendet~\cite{5}. Erstmal werden nur die partiellen Ableitungen berechnet. Warum sie gebraucht werden, wird im Kapitel~\ref{back} genauer
 erläutert. So kann in der Gleichung~\ref{xwithoutfunction} partiell nach drei Variablen der Funktion $C(\vec{y},\vec{x}^{(A,1)})$ abgeleitet werden: $x_{j}^{(\alpha-1,1)}$, $w_{i,j}^{(\alpha,1)}$ und $b_{i}^{(\alpha,1)}$.
 Auch die Funktion $C(\vec{y},\vec{x}^{(A,1)})$ wird in Kapitel~\ref{lost} genauer erläutert.
@@ -350,9 +351,9 @@ Folgendes ergibt sich:
     \frac{\partial C}{\partial x_{j}^{(\alpha-1,1)}} = \sum_{i=1}^{N_{\alpha}} \frac{\partial C}{\partial \bar{x}_i^{(\alpha,1)}} w_{i,j}^{(\alpha,1)}.
 \end{equation}
 Eine weitere Sache, die hinzugefügt werden muss, ist die Aktivierungsfunktion, denn sie gibt dem Netzwerk eine Komplexität~\cite{7}.
-Ohne diese Komplexität wäre das Netzwerk linear, was Nachteile mit sich bringt für die KI. % Warum ist die Notwendigkeit der Komplexität notwendig?
+Ohne diese Komplexität wäre das Netzwerk linear, weswegen die KI nur eine lineare Regression durchführen können.
 In Abbildung~\ref{regressionpic} ist die Regression bei einer
-nicht lineare Struktur deutlich besser als dies einer lineare Struktur.
+nicht lineare Struktur deutlich besser als die einer lineare Struktur.
 \begin{figure}[h]
     \centering
     \includegraphics[width=250pt, keepaspectratio]{images/regression}
@@ -394,7 +395,7 @@ Die partielle Ableitung nach $\bar{x}_i^{(\alpha,1)}$ zur Funktion $C(\vec{y},\v
 	\end{array}
     \right..
 \end{equation}
-Gründe für die Nutzung ist die Effizienz für linear gebaute Neuronale Netzwerke sowie die Berechnung der Werte. Außerdem kann durch ReLU
+Gründe für die Nutzung ist die Effizienz für linear gebaute Neuronale Netzwerke sowie die Berechnung der Werte. Außerdem können durch die ReLU
 Neuronen dauerhaft deaktiviert werden, da alle Werte, die $\leq 0$ sind, auf $0$ gesetzt werden.
 Eine weitere Aktivierungsfunktion, die für die KI verwendet wird, ist die Softmax Funktion~\cite{14}:
 \begin{equation}\label{softmax}
@@ -447,7 +448,7 @@ Diese neue Matrix entspricht der nächsten Schicht, weshalb die neue Matrix der 
 Da sowohl die Eingabe des Bildes sowie der Kernel beide Matrizen sind, kann mit der 2D Convolution gerechnet werden. Sie ist
 folgendermaßen definiert~\cite{16}:
 \begin{equation}
-    a_{i,j} = {(X \ast K)}_{i,j} := \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i-m'+1,j-n'+1}k_{m',n'}. \label{Conv}.
+    a_{i,j} = {(X \ast K)}_{i,j} := \sum_{m'=1}^{m_{k}} \sum_{n'=1}^{n_{k}} x_{i-m'+1,j-n'+1}k_{m',n'}. \label{Conv}
 \end{equation}
 Eine weitere Operation, die sehr wichtig für die 2D Convolution ist, ist die Kreuzkorrelation (Cross Correlation)~\cite{16}:
 \begin{equation}
@@ -477,9 +478,9 @@ Diese Operationen werden für das CNN öfters benutzt, denn zum einen reduziert 
 Merkmale des Bildes. Das macht die Berechnungen nochmal effizienter und die Hauptmerkmale werden hervorgehoben. Dies funktioniert, indem eine 2$\times$2 Matrix
 durch die einzelnen Regionen des Bildes schrittweise berechnet werden und der höchste Wert von den 4 Pixel ausgewählt wird~\cite{17}:
 \begin{equation}
-    x_{i,j}^{(\alpha,\beta)} = \max\{x_{i',j'}^{(\alpha-1,\beta)} \mkern5mu | \mkern5mu i' \in \{i,i+1\}, j' \in \{j,j+1\} \}.
+    x_{i,j}^{(\alpha,\beta)} = \max\{x_{i',j'}^{(\alpha-1,\beta)},x_{i',j'+1}^{(\alpha-1,\beta)},x_{i'+1,j'}^{(\alpha-1,\beta)},x_{i'+1,j'+1}^{(\alpha-1,\beta)}\},
 \end{equation}
-Die neue Dimension beträgt:
+wobei $i' = 2i-1$ und $j' = 2j-1$ gilt. Die neue Dimension beträgt:
 \begin{equation}
     m_{x}^{(\alpha,\beta)} = \bigg\lceil \frac{m_{x}^{(\alpha-1,\beta)}}{2} \bigg\rceil, \mkern5mu
     n_{x}^{(\alpha,\beta)} = \bigg\lceil \frac{n_{x}^{(\alpha-1,\beta)}}{2} \bigg\rceil.
@@ -490,11 +491,30 @@ Die anderen Werte spielen keine Rolle, deswegen ist der Gradient von denen = 0:
     \frac{\partial C}{\partial x_{i,j}^{(\alpha-1,\beta)}} =
     \left\{
     \begin{array}{ll}
-		\frac{\partial C}{\partial \bar{x}_{i,j}^{(\alpha,\beta)}} & \mathrm{falls} \mkern5mu \max\{x_{i',j'}^{(\alpha-1,\beta)} \mkern5mu | \mkern5mu i' \in \{i,i+1\}, j' \in \{j,j+1\} \} \\
+		\frac{\partial C}{\partial \bar{x}_{i,j}^{(\alpha,\beta)}} & \mathrm{falls} \mkern5mu \max\{x_{i,j}^{(\alpha-1,\beta)},x_{i,j+j'}^{(\alpha-1,\beta)},x_{i+i',j}^{(\alpha-1,\beta)},x_{i+i',j+j'}^{(\alpha-1,\beta)}\} \\
 		0 & \mathrm{falls} \mkern9mu \mathrm{Sonstiges}
 	\end{array}
-    \right..
+    \right.,
 \end{equation}
+dabei gilt für $i'$ und $j'$:
+\begin{equation}
+i' =
+    \left\{
+    \begin{array}{ll}
+		1 & \mathrm{falls} \mkern5mu 2 \mid i\\
+		-1 & \mathrm{falls} \mkern9mu 2 \nmid i
+	\end{array}
+    \right.,
+\end{equation}
+\begin{equation}
+    j' =
+        \left\{
+        \begin{array}{ll}
+            1 & \mathrm{falls} \mkern5mu 2 \mid j\\
+            -1 & \mathrm{falls} \mkern9mu 2 \nmid j
+        \end{array}
+        \right..
+    \end{equation}
 
 \subsubsection{Übergang von Feature Extraction zu Klassifikationsebene}
 Nachdem die Merkmale der Bilder durch 2D Convolution und Max-Pooling extrahiert wurden, muss diese Matrix zur Klassifikationsebene übertragen werden.
@@ -503,7 +523,7 @@ Ausgangsmatrix der Feature Extraction in einen Vektor umgewandelt werden:
 \begin{equation}
     \vec{x}^{(\alpha,\beta)} = vec_{n_{x}^{(\alpha,\beta)}, m_{x}^{(\alpha,\beta)}}(X^{(\alpha-1,\beta)T}).
 \end{equation}
-Dabei geben die Indizes, die Dimension der Matrix an, die abgeflacht werden soll. Für die Backpropagation muss der Vektor aber wieder in eine Matrix mit
+Dabei geben die Indizes die Dimension der Matrix an, die abgeflacht werden soll. Für die Backpropagation muss der Vektor aber wieder in eine Matrix mit
 der gleichen Dimension umgeformt werden. Dafür existiert eine Umkehrfunktion des Vektoroperators $vec^{-1}()$ die diese Berechnung durchführen kann:
 \begin{equation}
     X^{(\alpha-1,\beta)} = vec^{-1}_{n_{x}^{(\alpha,\beta)}, m_{x}^{(\alpha,\beta)}}{(\vec{x}^{(\alpha,\beta)})}^{T}.
@@ -512,7 +532,7 @@ Dieser Übergang wird auch Flattening genannt~\cite{18}.
 
 \subsection{Verlustfunktion}\label{lost}
 Um auszuwerten, ob eine KI gute oder schlechte Vorhersagen trifft, werden Verlustfunktionen verwendet.
-Verlustfunktionen sind Funktionen, die Abweichungen der vorhergesagten Zahl $\vec{x}^{(A,1)}$ mit der Ausgangszahl $\vec{y}$ berechnet wird. % Macht keinen Sinn
+Verlustfunktionen sind Funktionen, die die Abweichung der vorhergesagten Zahl $\vec{x}^{(A,1)}$ von der Ausganszahl $\vec{y}$ berechnen.
 Je größer die Abweichung ist, desto unpräziser ist die Vorhersage. Für die
 Optimierung bedeutet dies, dass der Wert der Verlustfunktion kleinstmöglich wird, sodass die KI präzise Vorhersagen treffen kann. Durch die Änderung der Parameter
 kann die Verlustfunktion minimiert werden, denn die Verlustfunktion ist von allen Parameter $w$,$b$ und $k$ in der Variable $\vec{x}^{(A,1)}$ abhängig.
@@ -535,12 +555,11 @@ Die folgende partielle Ableitung nach $x_i^{(A,1)}$ ist:
 \begin{equation}
     \frac{\partial C}{\partial x_i^{(A,1)}} = -\frac{y_i}{x_i^{(A,1)}}.
 \end{equation}
-Voraussetzung der Cross Entropy ist, dass $\sum_{i=1}^{N_A} x_i^{(A,1)} = 1$ ergibt. Dies wird durch die Softmax Funktion in der Gleichung~\ref{softmax} erfüllt.
+Voraussetzung der Cross Entropy ist, dass $\sum_{i=1}^{N_A} x_i^{(A,1)} = 1$ ergibt und dass die KI auf einer Klassifizierung basiert. Dies wird durch die Softmax Funktion in der Gleichung~\ref{softmax} erfüllt.
 Vorteil dieser Verlustfunktion ist zum einen, dass sie die Abweichung präzise für die Wahrscheinlichkeitsverteilung berechnen kann.
-Außerdem funktioniert sie gut für Klassifikationen, denn die KI der Facharbeit basiert sich auf einer Klassifizierung. %Hört sich komisch an
 
 \subsection{Optimierung}\label{gradient}
-Mithilfe der Optimierung kann die Abweichung der Verlustfunktion verringert werden, indem die Parameter optimal gewählt werden. In der Schulmathematik %Was unterscheidet Schulmathematik?
+Mithilfe der Optimierung kann die Abweichung der Verlustfunktion verringert werden, indem die Parameter optimal gewählt werden. In der Analysis
 wird die erste Ableitung der Verlustfunktion genommen und auf $0$ gesetzt. Problem bei der Rechnung ist nun, dass in der Praxis die Anzahl der Parameter
 der KI sehr hoch sein kann. Es wird von mehreren Tausenden Parametern gesprochen. So ist die Berechnung der Parameter uneffizient und könnte für einen
 Rechner sehr lange dauern, bis sie perfekte Parameter für die Verlustfunktion findet. Deswegen werden auf Algorithmen zurückgegriffen, die diese
@@ -609,7 +628,7 @@ Eigenschaften besitzen: Eine Eingabe und eine Ausgabe. Außerdem wird eine neue 
 Der DenseLayer soll die Schichten im FNN darstellen und die Parameter $w$ und $b$ als Variablen annehmen können. Weitere Klassen, wie Schichten für die
 Feature Extraction oder Aktivierungsfunktion und Verlustfunktion müssen erstellt werden. Vorteil an der Programmierung sind die Open Source Pakete, die das
 Internet anbietet. So müssen nicht die einzelnen Elemente der Vektoren ausgerechnet werden, sondern es lassen sich alle Elemente des Vektors auf einmal berechnen.
-Auch muss der Lernprozess programmiert werden, indem das Netzwerk durchläuft. Die Anzahl der Durchläufe des Netzwerkes kann bestimmt werden.
+Auch muss der Lernprozess programmiert werden, indem das Netzwerk durchlaufen wird. Die Anzahl der Durchläufe des Netzwerkes kann bestimmt werden.
 Diese nennt sich auch Epochen. Am Ende werden verschiedene Diagramme generiert, die für die Analyse der KI nützlich sein könnten.
 Mehr dazu im Kapitel~\ref{auswertung}. Für die Architektur des Netzwerkes werden mehrere Schichten von 2D Convolution sowie Schichten von Max Pooling angesetzt.
 Der Aufbau ist gut im Abbild 12 zu erkennen.
@@ -633,12 +652,12 @@ Feature Extraction zuständig. Sie hilft den Nutzer, die KI besser zu verstehen 
 \subsection{Trainingsphase}
 Bevor der Ablauf in der Trainingsphase erklärt wird, wird der Datensatz in 3 Teilen aufgespalten: Die Trainingsdaten, die Validierungsdaten
 und die Testdaten. Das Verhältnis der Verteilung kann unterschiedlich sein. Meistens sind sie in 50/30/20 aufgeteilt.
-Für die Trainingsphase wird erst mal nur die Trainingsdaten und die Validierungsdaten verwendet.
-Bevor die Trainingsphase gestartet wird, werden für alle verstellbare Parameter $w$, $b$ und $k$ zufällige Werte gegeben über
-die Gauß-Verteilung. Zuerst wird ein zufälliges erstes Bild aus den Trainingsdaten in die Eingabeschicht weitergeleitet.
+Für die Trainingsphase werden erst mal nur die Trainingsdaten und die Validierungsdaten verwendet.
+Bevor die Trainingsphase gestartet wird, werden für alle verstellbare Parameter $w$, $b$ und $k$ zufällige Werte über
+die Gauß-Verteilung gegeben. Zuerst wird ein zufälliges erstes Bild aus den Trainingsdaten in die Eingabeschicht weitergeleitet.
 Bis zur Ausgabeschicht berechnet die KI die entsprechende Vorhersage. Mit der Vorhersage wird die Fehlerabweichung mit dem richtigen
 Ergebnis mithilfe der Verlustfunktion berechnet. Die Parameter werden dann durch den SGD optimiert mithilfe von Backpropagation.
-Danach wird das nächste zufällige Bild ausgewählt und die Schritte werden wiederholt. Dies gilt so lange, bis der alle Bilder aus
+Danach wird das nächste zufällige Bild ausgewählt und die Schritte werden wiederholt. Dies gilt so lange, bis alle Bilder aus
 den Trainingsdaten einmal vorgekommen sind. Zuletzt werden die Bilder aus den Validierungsdaten
 in die Eingabeschicht weitergeleitet und die KI soll die Zahl vorhersagen. Der Unterschied ist aber, dass die Parameter nicht optimiert werden
 und dass sozusagen die KI nur getestet wird. Die erste Epoche endet somit und die zweite Epoche beginnt. Sie wiederholt die oben genannten Schritte,
@@ -647,7 +666,7 @@ werden sollen, kann selber bestimmt werden. Für die Facharbeit wurde die Epoche
 angezeigt, die für das Kapitel Auswertung eine wichtige Rolle spielen.
 
 \subsection{Auswertung}\label{auswertung}
-Manchmal kann bei schlecht ausgewählte Struktur des Netzwerkes die Vorhersehbarkeit der KI beeinträchtigen.
+Manchmal kann eine schlecht ausgewählte Struktur des Netzwerkes die Vorhersehbarkeit der KI beeinträchtigen.
 Dafür werden zwei neue Begriffe definiert: Überfittung (Overfitting) und Unterfittung (Underfitting)~\cite{7}.
 Als Beispiel werden 3 verschiedene Regressionen verwendet:
 \begin{figure}[h]
@@ -684,22 +703,23 @@ Nach der Durchführung liegt der Accuracy Wert der Testdaten bei 98,17\%~\cite{9
 \section{Schlussfolgerung}
 Die folgende Facharbeit ging der Leitfrage nach, wie eine handgeschriebene Zahl mithilfe einer KI erkannt werden. Dazu wurde eine KI umgesetzt, die diese Problemstellung lösen kann.
 Am Ende hat sich herausgegeben, dass die KI mit einer Wahrscheinlichkeit von 98,17\% die handgeschriebene Zahl erkennen konnte. Diese Umsetzung ist mithilfe der Mathematik, wie
-eine KI funktioniert und wie sie aufgebaut ist, möglich geworden. Davor wurde gezeigt, dass die künstlichen Neuronen viele Eigenschaften eines richtigen Neurons übernommen haben
-und für eine Struktur für die Zusammenhänge der künstlichen Neuronen für diese Problemstellung das CNN Modell ausgewählt wurde. Des Weiteren wurde das CNN Modell in zwei Bereichen
-aufgeteilt: Feature Extraction und Klassifikationsebene. Von den beiden Bereichen wurden die Aufgaben genauer erläutert und es hat sich herausgestellt, dass in der
-Klassifikationsebene die künstlichen Neuronen befinden, während bei der Feature Extraction nur die Merkmale der Bilder herausfiltert. Durch diese Kombination ermöglicht das der KI
+eine KI funktioniert und wie sie aufgebaut ist, möglich geworden. Dafür wurde erklärt, dass künstliche Neuronen viele Eigenschaften von richtigen Neuronen übernommen haben und mit den
+künstlichen Neuronen ein Netzwerk aufgebaut werden kann. Für die Anordnung der künstlichen Neuronen wurde das Modell CNN gewählt, weil sie in der Praxis gut für
+Bildererkennung ist. Des Weiteren wurde das CNN Modell in zwei Bereichen
+aufgeteilt: Feature Extraction und Klassifikationsebene. Von den beiden Bereichen wurden die Aufgaben genauer erläutert und es hat sich herausgestellt, dass sich in der
+Klassifikationsebene die künstlichen Neuronen befinden, während bei der Feature Extraction nur die Merkmale der Bilder herausgefiltert werden. Durch diese Kombination ermöglicht das der KI
 effizient zu lernen, da sie sich nur auf die Merkmale konzentrieren kann. Danach wurde durchgegangen, wie die KI eigentlich lernen kann. Dafür wurden die verstellbaren Parameter
 eingeführt, die für die Verlustfunktion verwendet wurden. Mithilfe von SGD und Backpropagation konnten die Parameter aktualisiert werden, sodass die Verlustfunktion kleinstmöglich
 wird. Zuletzt wurde dies alles umgesetzt mit der Programmiersprache Python. Der Aufbau für die Umsetzung ist in Abbildung 12 erkennbar. Die Ergebnisse der KI wurden
 dann protokolliert und am Ende kam das Ergebnis 98,17\% als Accuracy Wert heraus. Für den Anfang ist dies ein relativ gutes Ergebnis,
-dennoch wird bewusst, dass eine sehr gute KI in der Praxis mindestens eine Wahrscheinlichkeit von 99,5\% haben. Die KI ist in dem Fall noch ausbaufähig.
+dennoch wird bewusst, dass eine sehr gute KI in der Praxis mindestens eine Wahrscheinlichkeit von 99,5\% hat. Die KI ist in dem Fall noch ausbaufähig.
 \newline
 \newline
-Nun wurde in der Facharbeit auf die Verlustfunktionen und Aktivierungsfunktionen selber festgelegt. Wie wird
+Nun wurde in der Facharbeit die Verlustfunktionen und Aktivierungsfunktionen selber festgelegt. Wie wird
 denn entschieden, welche Verlustfunktion oder Aktivierungsfunktion passend für die Problemstellung ist?
 Für die Beantwortung dieser Frage ist eine weitere Untersuchung des Modells nötig. Für den Fall müssten andere Verlustfunktionen
 oder Aktivierungsfunktionen vorgestellt werden und für das ausgewählte Modell getestet und verglichen werden.
-Dies ist aber nur ein Ausblick für die Verbesserung der KI, welches dann in der Praxis sehr gut verwendbar sind.
+Dies ist aber nur ein Ausblick für die Verbesserung der KI, welches dann in der Praxis sehr gut verwendbar ist.
 
 \newpage
 \nolinenumbers{}

@@ -3,15 +3,15 @@
 \contentsline {subsection}{\numberline {2.1}Überwachtes Lernen}{3}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Voraussetzung für mehrschichtiges Lernen}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Datensatz}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Künstliches neuronales Netzwerk}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Konvolutionales neuronales Netzwerk}{6}{section.4}%
+\contentsline {subsection}{\numberline {3.2}Künstliches Neuronales Netzwerk}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Faltendes Neuronales Netzwerk}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Klassifikationsebene}{6}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Aktivierungsfunktion}{8}{subsubsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.2}Feature Extraction}{9}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}2D Convolution}{10}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}Max-Pooling}{11}{subsubsection.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.3}Übergang von Feature Extraction zu Klassifikationsebene}{11}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Verlustfunktion}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Verlustfunktion}{12}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Optimierung}{12}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Backpropagation}{14}{subsubsection.4.4.1}%
 \contentsline {section}{\numberline {5}Umsetzung}{15}{section.5}%
